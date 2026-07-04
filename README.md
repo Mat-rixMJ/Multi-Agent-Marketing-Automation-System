@@ -101,25 +101,52 @@ DAG, because Hermes already handles retries/skill-selection internally — `main
 just seeds the board and keeps nudging it forward, which is what "using loops"
 in the eval criteria is checking for.
 
-## Setup
+## Setup (Quick Start for Reviewers)
 
 ```bash
-git clone <your-repo-url>
-cd crowdwisdom-marketing-agents
-python -m venv .venv && source .venv/bin/activate
+git clone https://github.com/Mat-rixMJ/Agent-collector.git
+cd Agent-collector
+python -m venv .venv
+.venv\Scripts\activate        # Windows
 pip install -r requirements.txt
-cp .env.example .env   # fill in APIFY_TOKEN, OPENROUTER_API_KEY, TELEGRAM_BOT_TOKEN
+
+# Configure
+cp .env.example .env
+# Edit .env: paste your APIFY_TOKEN (required)
+# LLM: set LLM_PROVIDER=ollama and install Ollama with qwen2.5:7b
+#   ollama pull qwen2.5:7b
+#   ollama create qwen2.5-64k -f Modelfile
+
+# Run the full pipeline
 python main.py
+
+# OR run through Hermes Agent runtime
+python hermes_runner.py
+
+# Generate PDF report
+python generate_pdf_report.py
+
+# Start interactive Telegram bot (separate terminal)
+python tools/telegram_bot.py
 ```
 
-Install Hermes Agent separately (self-hosted runtime) and point it at this repo's
-`skills/` folder — see https://hermes-agent.org for install docs. `hermes/config.yaml`
-here documents the exact settings (model, telegram, obsidian vault path) to paste
-into `~/.hermes/config.yaml`.
+### LLM Provider Options
+| Provider | Setup | Speed |
+|---|---|---|
+| Ollama (local) | `LLM_PROVIDER=ollama` + install qwen2.5:7b | No rate limits, ~30 tok/s |
+| OpenRouter | `LLM_PROVIDER=openrouter` + API key | Fast but needs credits |
+| NVIDIA build | `LLM_PROVIDER=nvidia` + API key | Fast |
+
+### Hermes Agent
+Hermes is installed as a Python library (`pip install` from requirements.txt).
+`hermes_runner.py` demonstrates native Hermes AIAgent integration using the
+SKILL.md files as system prompts. `main.py` is the standalone batch pipeline
+that also works without Hermes for simpler testing.
 
 ## Submission checklist (per the brief)
-- [ ] GitHub repo link
-- [ ] Apify token used pasted into submission email (so they can rerun) — **do not
-      commit real tokens to the repo**, only `.env.example` should be committed
-- [ ] Screen recording of the Hermes kanban board moving cards across the loop
-- [ ] `.md` exports of each agent's output (Obsidian vault notes double as this)
+- [x] GitHub repo link — https://github.com/Mat-rixMJ/Agent-collector
+- [x] Apify token — provided in submission email
+- [x] Hermes kanban board — cards move through Backlog → In Progress → Review
+- [x] `.md` exports — all outputs in `obsidian_vault/` (Competitors, Ads, Outreach, Content, Strategy)
+- [x] PDF report — `output/marketing_report.pdf` (auto-generated + sent to Telegram)
+- [x] Telegram integration — push notifications + interactive chat bot
