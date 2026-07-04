@@ -39,6 +39,53 @@ def push_summary(text: str | None = None) -> None:
         print(f"[telegram_bot] Failed to send: {e}")
 
 
+def send_document(file_path: str, caption: str = "") -> None:
+    """Send a file (PDF, JSON, etc.) to the Telegram chat."""
+    if not TOKEN or not CHAT_ID:
+        print("[telegram_bot] TELEGRAM_BOT_TOKEN/CHAT_ID not set — skipping document send.")
+        return
+    import asyncio
+
+    async def _send():
+        bot = Bot(token=TOKEN)
+        with open(file_path, "rb") as f:
+            await bot.send_document(chat_id=CHAT_ID, document=f, caption=caption[:1024])
+
+    try:
+        asyncio.run(_send())
+        print(f"[telegram_bot] Sent document: {file_path}")
+    except Exception as e:
+        print(f"[telegram_bot] Failed to send document: {e}")
+
+
+def push_run_report() -> None:
+    """Send a detailed run summary with key metrics to Telegram."""
+    if not TOKEN or not CHAT_ID:
+        return
+
+    stats = memory.get_stats()
+    board = kanban.snapshot()
+
+    # Gather key output counts
+    ads_count = len(list((VAULT / "Ads").glob("*.md"))) if (VAULT / "Ads").exists() else 0
+    outreach_count = len(list((VAULT / "Outreach").glob("*.md"))) if (VAULT / "Outreach").exists() else 0
+    content_count = len(list((VAULT / "Content").glob("*.md"))) if (VAULT / "Content").exists() else 0
+    competitors_count = len([f for f in (VAULT / "Competitors").glob("*.md") if not f.name.startswith("_")]) if (VAULT / "Competitors").exists() else 0
+
+    msg = (
+        f"*Pipeline Run Complete*\n\n"
+        f"*Kanban Board:*\n{board}\n\n"
+        f"*Outputs Generated:*\n"
+        f"- Competitor briefs: {competitors_count}\n"
+        f"- Ad scripts (incl. revisions): {ads_count}\n"
+        f"- Influencer outreach drafts: {outreach_count}\n"
+        f"- Content pieces: {content_count}\n\n"
+        f"*Memory:* {stats['total_processed']} items tracked | Run #{stats['run_count']}\n\n"
+        f"_PDF report attached below_"
+    )
+    push_summary(msg)
+
+
 # --- Interactive handlers ---
 
 async def cmd_status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

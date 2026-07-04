@@ -67,7 +67,20 @@ def main() -> None:
 
     print("\n" + kanban.snapshot())
     memory.log_run(kanban.snapshot())
-    telegram_bot.push_summary()
+
+    # Generate PDF report
+    print("\n=== Generating PDF report ===")
+    try:
+        from generate_pdf_report import build_pdf
+        build_pdf()
+    except Exception as e:
+        print(f"[PDF] Failed to generate: {e}")
+
+    # Send detailed summary + PDF to Telegram
+    telegram_bot.push_run_report()
+    pdf_path = Path("output/marketing_report.pdf")
+    if pdf_path.exists():
+        telegram_bot.send_document(str(pdf_path), caption="Marketing Intelligence Report - latest run")
 
 
 if __name__ == "__main__":
