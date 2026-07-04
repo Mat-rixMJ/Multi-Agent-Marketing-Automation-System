@@ -17,7 +17,7 @@ site_packages = next(
 if site_packages:
     sys.path.insert(0, site_packages)
 
-# Bypass Hermes' minimum context check (our model has 64K ctx configured via Ollama)
+# Bypass Hermes context window check for OpenRouter free models
 import agent.agent_init as _ai
 _ai.MINIMUM_CONTEXT_LENGTH = 0
 
@@ -74,10 +74,23 @@ def run_skill_with_hermes(skill_name: str, task: str) -> str:
     print(f"HERMES AGENT :: {skill_name}")
     print(f"{'='*60}")
 
+    # Rotate between free models to avoid rate limits
+    FREE_MODELS = [
+        "nousresearch/hermes-3-llama-3.1-405b:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "meta-llama/llama-3.3-70b-instruct:free",
+        "google/gemma-4-31b-it:free",
+        "qwen/qwen3-coder:free",
+    ]
+    import hashlib
+    # Pick model based on skill name (so retries hit same model)
+    model_idx = int(hashlib.md5(skill_name.encode()).hexdigest(), 16) % len(FREE_MODELS)
+    model = os.getenv("HERMES_MODEL", FREE_MODELS[model_idx])
+
     agent = AIAgent(
-        model=os.getenv("HERMES_MODEL", "qwen2.5-64k"),
-        base_url="http://localhost:11434/v1",
-        api_key="ollama",
+        model=model,
+        base_url="https://openrouter.ai/api/v1",
+        api_key=os.getenv("OPENROUTER_API_KEY"),
         quiet_mode=True,
         ephemeral_system_prompt=system_prompt,
         max_iterations=5,
@@ -85,6 +98,7 @@ def run_skill_with_hermes(skill_name: str, task: str) -> str:
         skip_memory=True,
         disabled_toolsets=["terminal", "browser"],
     )
+    print(f"  Using model: {model}")
 
     result = agent.run_conversation(user_message=task)
     response = result.get("final_response", "No response")
@@ -102,7 +116,7 @@ def run_skill_with_hermes(skill_name: str, task: str) -> str:
 
 def main():
     print("Starting Hermes Agent pipeline...")
-    print(f"Model: {os.getenv('OLLAMA_MODEL', 'qwen2.5:7b')} via Ollama")
+    print(f"Model: {os.getenv('HERMES_MODEL', 'meta-llama/llama-3.3-70b-instruct:free')} via OpenRouter")
     print(f"Skills: {list(SKILL_TASKS.keys())}")
 
     for skill_name, task in SKILL_TASKS.items():

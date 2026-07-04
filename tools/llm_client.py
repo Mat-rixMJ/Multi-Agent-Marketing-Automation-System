@@ -29,8 +29,20 @@ _PROVIDERS = {
 }
 
 
-@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=20))
+# Free models to rotate through when hitting rate limits on OpenRouter
+_FREE_MODELS = [
+    "nousresearch/hermes-3-llama-3.1-405b:free",
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "google/gemma-4-31b-it:free",
+    "qwen/qwen3-coder:free",
+]
+_model_rotation_idx = 0
+
+
+@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=2, min=3, max=30))
 def chat(messages: list[dict], temperature: float = 0.7, max_tokens: int = 1200) -> str:
+    global _model_rotation_idx
     provider = os.getenv("LLM_PROVIDER", "openrouter")
     cfg = _PROVIDERS[provider]
     api_key = os.getenv(cfg["key_env"]) if cfg["key_env"] else "ollama"
@@ -48,6 +60,15 @@ def chat(messages: list[dict], temperature: float = 0.7, max_tokens: int = 1200)
         json={"model": model, "messages": messages, "temperature": temperature, "max_tokens": max_tokens},
         timeout=300,
     )
+
+    # On rate limit (429), rotate to next free model and retry
+    if resp.status_code == 429 and provider == "openrouter":
+        _model_rotation_idx = (_model_rotation_idx + 1) % len(_FREE_MODELS)
+        new_model = _FREE_MODELS[_model_rotation_idx]
+        os.environ[cfg["model_env"]] = new_model
+        print(f"  [LLM] Rate limited, rotating to: {new_model}")
+        resp.raise_for_status()  # triggers tenacity retry
+
     resp.raise_for_status()
     return resp.json()["choices"][0]["message"]["content"]
 
