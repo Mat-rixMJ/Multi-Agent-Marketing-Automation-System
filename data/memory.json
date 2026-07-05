@@ -51,6 +51,24 @@
     "video:8nFTkjPk80k": {
       "timestamp": "2026-07-04T18:48:42.453675+00:00",
       "url": "https://www.youtube.com/watch?v=8nFTkjPk80k"
+    },
+    "competitors_last_discovered": {
+      "timestamp": "2026-07-05T03:43:20.287701+00:00",
+      "competitors": [
+        "Alphatech Systems",
+        "QuantConnect",
+        "Zipline Trading",
+        "T3 Trading",
+        "TraderFeed"
+      ]
+    },
+    "competitor:Alphatech Systems": {
+      "timestamp": "2026-07-05T03:44:03.756285+00:00",
+      "content_hash": "5f58996f0858"
+    },
+    "competitor:QuantConnect": {
+      "timestamp": "2026-07-05T03:45:08.276218+00:00",
+      "content_hash": "edbd8d6252f2"
     }
   },
   "history": [

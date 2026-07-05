@@ -4,7 +4,7 @@
     "handle": "Scarface Trades",
     "url": "https://www.youtube.com/@ScarfaceTrades",
     "subscribers": 0,
-    "avg_views": 31245,
+    "avg_views": 32328,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -16,11 +16,35 @@
     "handle": "Trade with Pat",
     "url": "https://www.youtube.com/@TradewithPat",
     "subscribers": 0,
-    "avg_views": 36617,
+    "avg_views": 214366,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Forex Trading For Beginners (Full Course in under 26 Minutes)"
+      "The Only Swing Trading Video Beginners will Ever Need! (Step by Step Guide)"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "PB Blake Trades",
+    "url": "https://www.youtube.com/@PBBlakeTrades",
+    "subscribers": 0,
+    "avg_views": 15079,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How I Made $15,159 Day Trading In 13 MINUTES"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Craig Percoco",
+    "url": "https://www.youtube.com/@craig_percoco",
+    "subscribers": 0,
+    "avg_views": 44247,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "LIVE DAY TRADING - How I Make $10,589 Risking $2k [My 10x Strategy]"
     ]
   },
   {
@@ -28,7 +52,7 @@
     "handle": "TradingLab",
     "url": "https://www.youtube.com/@TradingLabOfficial",
     "subscribers": 0,
-    "avg_views": 587189,
+    "avg_views": 587411,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -37,46 +61,10 @@
   },
   {
     "platform": "youtube",
-    "handle": "Sierra Aaliyah",
-    "url": "https://www.youtube.com/@SierraAaliyah",
-    "subscribers": 0,
-    "avg_views": 170936,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "How to read candlesticks (BEGINNERS TRADING 101)"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Jooviers Gems",
-    "url": "https://www.youtube.com/@JooviersGems",
-    "subscribers": 0,
-    "avg_views": 56908,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "How to Make Money Trading Prop Firms As a Beginner (FULL COURSE)"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Day Trading Addict",
-    "url": "https://www.youtube.com/@DayTradingAddict",
-    "subscribers": 0,
-    "avg_views": 2448975,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "The Only Day Trading Video You Should Watch... (Full Course: Beginner To Advanced)"
-    ]
-  },
-  {
-    "platform": "youtube",
     "handle": "SMB Capital",
     "url": "https://www.youtube.com/@smbcapital",
     "subscribers": 0,
-    "avg_views": 421672,
+    "avg_views": 421688,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -85,26 +73,38 @@
   },
   {
     "platform": "youtube",
-    "handle": "Ross Cameron - Warrior Trading",
-    "url": "https://www.youtube.com/@DaytradeWarrior",
+    "handle": "Day Trading Addict",
+    "url": "https://www.youtube.com/@DayTradingAddict",
     "subscribers": 0,
-    "avg_views": 491147,
+    "avg_views": 2449112,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Day Trading: How To Start From ZERO (Beginner's Guide)"
+      "The Only Day Trading Video You Should Watch... (Full Course: Beginner To Advanced)"
     ]
   },
   {
     "platform": "youtube",
-    "handle": "Craig Percoco",
-    "url": "https://www.youtube.com/@craig_percoco",
+    "handle": "Ross Cameron - Warrior Trading",
+    "url": "https://www.youtube.com/@DaytradeWarrior",
     "subscribers": 0,
-    "avg_views": 54078,
+    "avg_views": 341513,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "This 1 Minute Day Trading Strategy Works EveryDay ($1,000/day)"
+      "How To Start Day Trading in 2026 (full training)"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Sierra Aaliyah",
+    "url": "https://www.youtube.com/@SierraAaliyah",
+    "subscribers": 0,
+    "avg_views": 384228,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How To Start Trading As A Beginner In 2026 (Step-by-Step)"
     ]
   },
   {
@@ -112,11 +112,11 @@
     "handle": "TJR",
     "url": "https://www.youtube.com/@TJRTrades",
     "subscribers": 0,
-    "avg_views": 581710,
+    "avg_views": 3209392,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Easiest Way To Start Day Trading From Scratch (Exactly What I Did)"
+      "How To Start Day Trading As A Beginner In 2026 (9 hours)"
     ]
   },
   {
@@ -124,7 +124,7 @@
     "handle": "Data Trader",
     "url": "https://www.youtube.com/@DataTraders",
     "subscribers": 0,
-    "avg_views": 600917,
+    "avg_views": 601159,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -133,10 +133,22 @@
   },
   {
     "platform": "youtube",
+    "handle": "Trades By Sci",
+    "url": "https://www.youtube.com/@tradesbysci",
+    "subscribers": 0,
+    "avg_views": 1609679,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Trading Course Day 1: Trends"
+    ]
+  },
+  {
+    "platform": "youtube",
     "handle": "Charles Schwab",
     "url": "https://www.youtube.com/@CharlesSchwab",
     "subscribers": 0,
-    "avg_views": 480839,
+    "avg_views": 481575,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -148,7 +160,7 @@
     "handle": "TheOneLanceB",
     "url": "https://www.youtube.com/@TheOneLanceB",
     "subscribers": 0,
-    "avg_views": 25785,
+    "avg_views": 25861,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -157,22 +169,10 @@
   },
   {
     "platform": "youtube",
-    "handle": "BrandonTrades",
-    "url": "https://www.youtube.com/@BrandonTrades",
-    "subscribers": 0,
-    "avg_views": 5601,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "The Only Swing Trading Strategy You Need To Make Money"
-    ]
-  },
-  {
-    "platform": "youtube",
     "handle": "Matthew Manuel",
     "url": "https://www.youtube.com/@MatthewManuel1",
     "subscribers": 0,
-    "avg_views": 215131,
+    "avg_views": 215316,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -181,22 +181,10 @@
   },
   {
     "platform": "youtube",
-    "handle": "Humbled Trader",
-    "url": "https://www.youtube.com/@HumbledTraderOfficial",
-    "subscribers": 0,
-    "avg_views": 869052,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "The Ultimate Guide to Swing Trading for Beginners 2026"
-    ]
-  },
-  {
-    "platform": "youtube",
     "handle": "Money Talk With Rashad",
     "url": "https://www.youtube.com/@moneytalkrashad",
     "subscribers": 0,
-    "avg_views": 26961,
+    "avg_views": 26980,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -205,14 +193,26 @@
   },
   {
     "platform": "youtube",
-    "handle": "fxalexg ",
-    "url": "https://www.youtube.com/@fxalexg__",
+    "handle": "Humbled Trader",
+    "url": "https://www.youtube.com/@HumbledTraderOfficial",
     "subscribers": 0,
-    "avg_views": 1966511,
+    "avg_views": 869395,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "How To Trade Forex For Beginners in 2025 | Full Tutorial"
+      "The Ultimate Guide to Swing Trading for Beginners 2026"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "fxalexg ",
+    "url": "https://www.youtube.com/@fxalexg__",
+    "subscribers": 0,
+    "avg_views": 2062294,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Start Forex Trading for Beginners Step by Step in 2025 | Full Guide"
     ]
   },
   {
@@ -220,7 +220,7 @@
     "handle": "Jdub Trades",
     "url": "https://www.youtube.com/@JdubTrades",
     "subscribers": 0,
-    "avg_views": 21679,
+    "avg_views": 21798,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -229,14 +229,14 @@
   },
   {
     "platform": "youtube",
-    "handle": "LuxAlgo",
-    "url": "https://www.youtube.com/@LuxAlgo",
+    "handle": "BrandonTrades",
+    "url": "https://www.youtube.com/@BrandonTrades",
     "subscribers": 0,
-    "avg_views": 49370,
+    "avg_views": 17229,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "How to Actually Win at Trading (Best Swing Trading Strategy)"
+      "Easy Swing Trading Strategy (Full Breakdown)"
     ]
   },
   {
@@ -244,7 +244,7 @@
     "handle": "EllyDTrades",
     "url": "https://www.youtube.com/@makemoneytradingoptions",
     "subscribers": 0,
-    "avg_views": 6555,
+    "avg_views": 6608,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -253,14 +253,26 @@
   },
   {
     "platform": "youtube",
-    "handle": "The Trading Geek",
-    "url": "https://www.youtube.com/@TheTradingGeek",
+    "handle": "UF Trading",
+    "url": "https://www.youtube.com/@UFtrading",
     "subscribers": 0,
-    "avg_views": 368515,
+    "avg_views": 19952,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "ULTIMATE Guide to Pass Prop Firm Challenge (FUNDED INSTANTLY)"
+      "Easy Swing Trading Strategy For Consistent Profits"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "LuxAlgo",
+    "url": "https://www.youtube.com/@LuxAlgo",
+    "subscribers": 0,
+    "avg_views": 49427,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Actually Win at Trading (Best Swing Trading Strategy)"
     ]
   },
   {
@@ -268,7 +280,7 @@
     "handle": "Financial Wisdom",
     "url": "https://www.youtube.com/@FinancialWisdom",
     "subscribers": 0,
-    "avg_views": 28559,
+    "avg_views": 28635,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -280,11 +292,11 @@
     "handle": "Dhan \u26a1",
     "url": "https://www.youtube.com/@DhanHQ",
     "subscribers": 0,
-    "avg_views": 34166,
+    "avg_views": 4385,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Advanced Swing Trading Strategy (With FREE Screener + Filters)"
+      "Find Winning Swing Stocks Using This FREE Screener"
     ]
   },
   {
@@ -292,7 +304,7 @@
     "handle": "The Trading Academy",
     "url": "https://www.youtube.com/@TheTradingAcademy",
     "subscribers": 0,
-    "avg_views": 12128,
+    "avg_views": 12157,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -304,7 +316,7 @@
     "handle": "marketfeed",
     "url": "https://www.youtube.com/@marketfeedbyShariqueSamsudheen",
     "subscribers": 0,
-    "avg_views": 61026,
+    "avg_views": 61138,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -316,7 +328,7 @@
     "handle": "Mind Math Money",
     "url": "https://www.youtube.com/@MindMathMoney",
     "subscribers": 0,
-    "avg_views": 3750,
+    "avg_views": 3762,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -325,10 +337,22 @@
   },
   {
     "platform": "youtube",
+    "handle": "Trade With Books",
+    "url": "https://www.youtube.com/@tradewithbooks",
+    "subscribers": 0,
+    "avg_views": 10412,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "he Ultimate Stock Screening Strategy for Swing Traders \ud83d\udcc8"
+    ]
+  },
+  {
+    "platform": "youtube",
     "handle": "BullTrack",
     "url": "https://www.youtube.com/@bulltrack",
     "subscribers": 0,
-    "avg_views": 25700,
+    "avg_views": 25751,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -340,11 +364,11 @@
     "handle": "The Moving Average",
     "url": "https://www.youtube.com/@TheMovingAverage",
     "subscribers": 0,
-    "avg_views": 712642,
+    "avg_views": 690735,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "What is Forex - 2 Minute Explanation"
+      "Trading Psychology and the 5 Rules to follow"
     ]
   },
   {
@@ -352,7 +376,7 @@
     "handle": "CMC Aureon",
     "url": "https://www.youtube.com/@CMC_Aureon",
     "subscribers": 0,
-    "avg_views": 4202706,
+    "avg_views": 4203683,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -364,11 +388,11 @@
     "handle": "Titans Of Tomorrow",
     "url": "https://www.youtube.com/@titans.of.tomorrow",
     "subscribers": 0,
-    "avg_views": 164857,
+    "avg_views": 119133,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "The Man Behind 157 Prop Firms Exposes Why Traders Fail - Justin D. Hertzberg"
+      "The Genius Who Outsmarted The Prop Firm Game, And Made $1.5M In Payouts."
     ]
   },
   {
@@ -376,7 +400,7 @@
     "handle": "The Traveling Trader",
     "url": "https://www.youtube.com/@TheTravelingTrader",
     "subscribers": 0,
-    "avg_views": 907786,
+    "avg_views": 908241,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -385,34 +409,10 @@
   },
   {
     "platform": "youtube",
-    "handle": "Words of Rizdom",
-    "url": "https://www.youtube.com/@wordsofrizdom",
-    "subscribers": 0,
-    "avg_views": 150380,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "HOW To FIX Your Trading Psychology [Must Watch]"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Jdun Trades",
-    "url": "https://www.youtube.com/@jduntrades",
-    "subscribers": 0,
-    "avg_views": 176025,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "9 Years of Trading Psychology in 9 Minutes"
-    ]
-  },
-  {
-    "platform": "youtube",
     "handle": "InstituteofTrading",
     "url": "https://www.youtube.com/@InstituteofTrading",
     "subscribers": 0,
-    "avg_views": 573996,
+    "avg_views": 574023,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -421,10 +421,34 @@
   },
   {
     "platform": "youtube",
+    "handle": "Words of Rizdom",
+    "url": "https://www.youtube.com/@wordsofrizdom",
+    "subscribers": 0,
+    "avg_views": 998250,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Master Trading Psychology in UNDER 83 Minutes with Rande Howell"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Jdun Trades",
+    "url": "https://www.youtube.com/@jduntrades",
+    "subscribers": 0,
+    "avg_views": 176106,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "9 Years of Trading Psychology in 9 Minutes"
+    ]
+  },
+  {
+    "platform": "youtube",
     "handle": "Whispers of Livermore",
     "url": "https://www.youtube.com/@WhispersofLivermore",
     "subscribers": 0,
-    "avg_views": 594690,
+    "avg_views": 595011,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -433,46 +457,10 @@
   },
   {
     "platform": "youtube",
-    "handle": "Einstein of Wall Street",
-    "url": "https://www.youtube.com/@EinsteinofWallStreet",
-    "subscribers": 0,
-    "avg_views": 188608,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Why Trading Psychology Separates Winners From Losers"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Two Side Traders",
-    "url": "https://www.youtube.com/@2sidetraders",
-    "subscribers": 0,
-    "avg_views": 159800,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Operator Psychology In Stock Market : Operator Mindset, Institutional Buying & Selling Zones & Traps"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Psychology of Profit",
-    "url": "https://www.youtube.com/@Psychology-Of-Profit",
-    "subscribers": 0,
-    "avg_views": 21623,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "How Smart Money Manipulates the Market | Trading Psychology Explained"
-    ]
-  },
-  {
-    "platform": "youtube",
     "handle": "Trading Psychology Stick",
     "url": "https://www.youtube.com/@TradingPsychologyStick",
     "subscribers": 0,
-    "avg_views": 309960,
+    "avg_views": 309984,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -481,10 +469,34 @@
   },
   {
     "platform": "youtube",
+    "handle": "Two Side Traders",
+    "url": "https://www.youtube.com/@2sidetraders",
+    "subscribers": 0,
+    "avg_views": 159861,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Operator Psychology In Stock Market : Operator Mindset, Institutional Buying & Selling Zones & Traps"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Einstein of Wall Street",
+    "url": "https://www.youtube.com/@EinsteinofWallStreet",
+    "subscribers": 0,
+    "avg_views": 189599,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Why Trading Psychology Separates Winners From Losers"
+    ]
+  },
+  {
+    "platform": "youtube",
     "handle": "The Friendly Bear - Verified Trader",
     "url": "https://www.youtube.com/@TheFriendlyBear",
     "subscribers": 0,
-    "avg_views": 15587,
+    "avg_views": 15590,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -493,46 +505,10 @@
   },
   {
     "platform": "youtube",
-    "handle": "Trading Mindset Lab",
-    "url": "https://www.youtube.com/@TradingMindsetLab-b9z",
-    "subscribers": 0,
-    "avg_views": 210149,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Market Secrets: The Real Power Behind Price Moves."
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Rande Howell",
-    "url": "https://www.youtube.com/@igniteyourspark",
-    "subscribers": 0,
-    "avg_views": 121776,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Build a Winning Trading Psychology Mindset"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "TraderLion",
-    "url": "https://www.youtube.com/@TraderLion",
-    "subscribers": 0,
-    "avg_views": 21729,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "The Raw Truth About Trading Psychology"
-    ]
-  },
-  {
-    "platform": "youtube",
     "handle": "Market Legends",
     "url": "https://www.youtube.com/@WisdomofMarketLegends",
     "subscribers": 0,
-    "avg_views": 25913,
+    "avg_views": 25919,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -541,26 +517,98 @@
   },
   {
     "platform": "youtube",
-    "handle": "ANTHONYSWORLD",
-    "url": "https://www.youtube.com/@_anthonysworld_",
+    "handle": "Rande Howell",
+    "url": "https://www.youtube.com/@igniteyourspark",
     "subscribers": 0,
-    "avg_views": 282949,
+    "avg_views": 270845,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "The Ultimate Beginners Guide To  FOREX!"
+      "Developing a Patient Trading Mind"
     ]
   },
   {
     "platform": "youtube",
-    "handle": "Jeffrey Benson Forex",
-    "url": "https://www.youtube.com/@JeffreyBenson",
+    "handle": "TraderLion",
+    "url": "https://www.youtube.com/@TraderLion",
     "subscribers": 0,
-    "avg_views": 1128548,
+    "avg_views": 21732,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "How To Start Forex Trading For Beginners\u2019 2025 (Full Course)"
+      "The Raw Truth About Trading Psychology"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "MoneyShow",
+    "url": "https://www.youtube.com/@MoneyShow",
+    "subscribers": 0,
+    "avg_views": 270410,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Trade Like an Institutional Trader"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Lesiba Mothupi",
+    "url": "https://www.youtube.com/@lesibamothupi",
+    "subscribers": 0,
+    "avg_views": 1754,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "I Found an AI Bot That Can Automate Forex Trading for Beginners"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Booming Bulls",
+    "url": "https://www.youtube.com/@BoomingBulls",
+    "subscribers": 0,
+    "avg_views": 37641,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Use Liquidity in Trading || Beginner-Friendly Smart Money Concept"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Pushkar Raj Thakur: Stock Market Educator \ud83d\udcc8",
+    "url": "https://www.youtube.com/@PushkarRajThakurOfficial",
+    "subscribers": 0,
+    "avg_views": 16591,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Start Trading for Beginners? Step by Step #Trading Tutorial on Delta Exchange "
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "The Trading Academy Market Updates",
+    "url": "https://www.youtube.com/@TheTradingAcademyMarketUpdates",
+    "subscribers": 0,
+    "avg_views": 2508,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "WAITING FOR EURUSD TO SELL - Forex Market Outlook Ep. 202"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "ANTHONYSWORLD",
+    "url": "https://www.youtube.com/@_anthonysworld_",
+    "subscribers": 0,
+    "avg_views": 23487,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Forex Trading For Dummies...(Free Course)"
     ]
   },
   {
@@ -568,7 +616,7 @@
     "handle": "JeaFx",
     "url": "https://www.youtube.com/@JeaFxForexTrading",
     "subscribers": 0,
-    "avg_views": 383805,
+    "avg_views": 384090,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -577,50 +625,50 @@
   },
   {
     "platform": "youtube",
-    "handle": "Matt Donlevey - Photon Trading",
-    "url": "https://www.youtube.com/@PhotonTrading",
+    "handle": "Trade With Akash ",
+    "url": "https://www.youtube.com/@tradewithakashgarg",
     "subscribers": 0,
-    "avg_views": 646680,
+    "avg_views": 975,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Beginners Guide To Forex Trading In 2026 (+3 hours)"
+      "Best Forex Broker for Indian Traders | Best Spreads, Commission & Withdrawals | Akash Garg"
     ]
   },
   {
     "platform": "youtube",
-    "handle": "Naija Nicki ",
-    "url": "https://www.youtube.com/@Naija_nicki",
+    "handle": "Jeremy Cash Young Ceo ",
+    "url": "https://www.youtube.com/@jeremycash32",
     "subscribers": 0,
-    "avg_views": 493,
+    "avg_views": 1753,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Lagos big boy that\u2019s into forex trading found love in my show with a common sales girl on the street"
+      "The Forex Trading System Every Beginner Needs | Charts Don't Lie"
     ]
   },
   {
     "platform": "youtube",
-    "handle": "Umar Punjabi",
-    "url": "https://www.youtube.com/@UmarPunjabi-v8m",
+    "handle": "Wysetrade",
+    "url": "https://www.youtube.com/@Wysetrade",
     "subscribers": 0,
-    "avg_views": 142230,
+    "avg_views": 2352835,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Gold vs Forex Trading for Beginners \u2014 Which One is More Profitable?"
+      "Forex Trading For Beginners (FREE FULL COURSE)"
     ]
   },
   {
     "platform": "youtube",
-    "handle": "Booming Bulls",
-    "url": "https://www.youtube.com/@BoomingBulls",
+    "handle": "Jason Graystone",
+    "url": "https://www.youtube.com/@JasonGraystone",
     "subscribers": 0,
-    "avg_views": 3014207,
+    "avg_views": 100259,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Forex Trading for Beginners Full Course!"
+      "Trading Challenge Prop Firms Are a Scam (Here\u2019s Proof)"
     ]
   },
   {
@@ -628,7 +676,7 @@
     "handle": "The Trading Channel (The Trading Channel)",
     "url": "https://www.youtube.com/@thetradingchannel",
     "subscribers": 0,
-    "avg_views": 1954232,
+    "avg_views": 1954266,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -637,50 +685,26 @@
   },
   {
     "platform": "youtube",
-    "handle": "Kelly Ohgee",
-    "url": "https://www.youtube.com/@kellyohgee",
+    "handle": "Vidollar",
+    "url": "https://www.youtube.com/@Vidollar",
     "subscribers": 0,
-    "avg_views": 175453,
+    "avg_views": 1034058,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Exposing The Prop Firm Trading Industry."
+      "Forex Trading For Beginners In 2025. (The Complete Step by Step Course)"
     ]
   },
   {
     "platform": "youtube",
-    "handle": "The Plain Bagel",
-    "url": "https://www.youtube.com/@ThePlainBagel",
+    "handle": "Matt Donlevey - Photon Trading",
+    "url": "https://www.youtube.com/@PhotonTrading",
     "subscribers": 0,
-    "avg_views": 235497,
+    "avg_views": 647066,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Forex Trading/Investing Explained"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Dr. King'ori (Felixe JaSiaya)",
-    "url": "https://www.youtube.com/@LebrandKingori",
-    "subscribers": 0,
-    "avg_views": 384892,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Don\u2019t be lied to about Forex trading || Rufas Kamau"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Rayner Teo",
-    "url": "https://www.youtube.com/@tradingwithrayner",
-    "subscribers": 0,
-    "avg_views": 1725274,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "The Ultimate Forex Trading Course (For Beginners)"
+      "Beginners Guide To Forex Trading In 2026 (+3 hours)"
     ]
   },
   {
@@ -688,7 +712,7 @@
     "handle": "JJ Simon",
     "url": "https://www.youtube.com/@itsjjsimon",
     "subscribers": 0,
-    "avg_views": 25547,
+    "avg_views": 25611,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -700,7 +724,7 @@
     "handle": "Blue Edge Financial",
     "url": "https://www.youtube.com/@BlueEdgeForex",
     "subscribers": 0,
-    "avg_views": 174167,
+    "avg_views": 174298,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -712,119 +736,11 @@
     "handle": "Coding Jesus (getcracked.io)",
     "url": "https://www.youtube.com/@CodingJesus",
     "subscribers": 0,
-    "avg_views": 1820,
+    "avg_views": 5050,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "Fake trading is hard work"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "PropFirmTrader",
-    "url": "https://www.youtube.com/@Prop-Firm-Trader",
-    "subscribers": 0,
-    "avg_views": 11311,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "US Marine Turned $500,000+ Prop Firm Trader"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "PB Blake",
-    "url": "https://www.youtube.com/@PBBlakeYT",
-    "subscribers": 0,
-    "avg_views": 35160,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "How to ACTUALLY trade prop firms"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Kimmel Trading",
-    "url": "https://www.youtube.com/@KimmelTrading",
-    "subscribers": 0,
-    "avg_views": 225448,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Asking the TOP 5 Prop Firm Traders How to PASS"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Day Trading & Jesus",
-    "url": "https://www.youtube.com/@daytradingjesus",
-    "subscribers": 0,
-    "avg_views": 106338,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Best Prop Firms For Beginner Day Traders (2026)"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "TraderNick",
-    "url": "https://www.youtube.com/@TraderNick",
-    "subscribers": 0,
-    "avg_views": 10639,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "A Warning to Prop Firm Traders..."
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Sean Solano",
-    "url": "https://www.youtube.com/@SeanSolano",
-    "subscribers": 0,
-    "avg_views": 11954,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Prop Firm Trading: The Complete Guide for Beginners (2026)"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Jesse Rogers | Casper SMC",
-    "url": "https://www.youtube.com/@caspersmc",
-    "subscribers": 0,
-    "avg_views": 77961,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Easiest Way to Trade Prop Firms as a Beginner In 2026"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "ImanTradingLive",
-    "url": "https://www.youtube.com/@imantradinglive",
-    "subscribers": 0,
-    "avg_views": 197278,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Full Guide on How to Make Money Trading Prop Firms (IN DEPTH)"
-    ]
-  },
-  {
-    "platform": "youtube",
-    "handle": "Trade With Jem",
-    "url": "https://www.youtube.com/@tradewithjem",
-    "subscribers": 0,
-    "avg_views": 14853,
-    "description": "",
-    "contact_email": null,
-    "recent_video_titles": [
-      "Prop Firms EXPLAINED in 5 Minutes"
+      "The \"prop firm\" trading epidemic is crazy"
     ]
   },
   {
@@ -832,7 +748,7 @@
     "handle": "Patrick Wieland",
     "url": "https://www.youtube.com/@PatrickWieland",
     "subscribers": 0,
-    "avg_views": 1072,
+    "avg_views": 2914,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
@@ -841,14 +757,146 @@
   },
   {
     "platform": "youtube",
-    "handle": "JadeCap",
-    "url": "https://www.youtube.com/@JadeCap",
+    "handle": "Day Trading & Jesus",
+    "url": "https://www.youtube.com/@daytradingjesus",
     "subscribers": 0,
-    "avg_views": 118792,
+    "avg_views": 106413,
     "description": "",
     "contact_email": null,
     "recent_video_titles": [
-      "I Made $1.2M Prop Firm Trading (What I'd Do Differently)"
+      "Best Prop Firms For Beginner Day Traders (2026)"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "PB Blake",
+    "url": "https://www.youtube.com/@PBBlakeYT",
+    "subscribers": 0,
+    "avg_views": 35364,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to ACTUALLY trade prop firms"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Sean Solano",
+    "url": "https://www.youtube.com/@SeanSolano",
+    "subscribers": 0,
+    "avg_views": 11987,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Prop Firm Trading: The Complete Guide for Beginners (2026)"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Kimmel Trading",
+    "url": "https://www.youtube.com/@KimmelTrading",
+    "subscribers": 0,
+    "avg_views": 225497,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Asking the TOP 5 Prop Firm Traders How to PASS"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Jesse Rogers | Casper SMC",
+    "url": "https://www.youtube.com/@caspersmc",
+    "subscribers": 0,
+    "avg_views": 77969,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Easiest Way to Trade Prop Firms as a Beginner In 2026"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Trade With Jem",
+    "url": "https://www.youtube.com/@tradewithjem",
+    "subscribers": 0,
+    "avg_views": 14887,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Prop Firms EXPLAINED in 5 Minutes"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Mike Swartz",
+    "url": "https://www.youtube.com/@Mike_Swartz",
+    "subscribers": 0,
+    "avg_views": 553,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Lucid Trading Prop Firm Review"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "Jooviers Gems",
+    "url": "https://www.youtube.com/@JooviersGems",
+    "subscribers": 0,
+    "avg_views": 57065,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Make Money Trading Prop Firms As a Beginner (FULL COURSE)"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "ImanTradingLive",
+    "url": "https://www.youtube.com/@imantradinglive",
+    "subscribers": 0,
+    "avg_views": 197329,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "Full Guide on How to Make Money Trading Prop Firms (IN DEPTH)"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "kole trades",
+    "url": "https://www.youtube.com/@koletrades",
+    "subscribers": 0,
+    "avg_views": 77066,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to Scale to $10k+ a Month Trading Prop Firms"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "JackTrades",
+    "url": "https://www.youtube.com/@Jacktradesofficial",
+    "subscribers": 0,
+    "avg_views": 21590,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How to trade prop firms the RIGHT way"
+    ]
+  },
+  {
+    "platform": "youtube",
+    "handle": "tomtrades",
+    "url": "https://www.youtube.com/@itstomtrades",
+    "subscribers": 0,
+    "avg_views": 26645,
+    "description": "",
+    "contact_email": null,
+    "recent_video_titles": [
+      "How To Trade Prop Firms the RIGHT WAY in 2026"
     ]
   }
 ]

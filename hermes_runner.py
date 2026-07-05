@@ -135,16 +135,14 @@ def run_skill_with_hermes(skill_name: str, task: str, model: str) -> str:
     print(f"{'='*60}")
 
     agent = AIAgent(
-        model=model,
-        base_url="https://openrouter.ai/api/v1",
-        api_key=os.getenv("OPENROUTER_API_KEY"),
+        model=os.getenv("OLLAMA_MODEL", "qwen2.5-64k"),
+        base_url="http://localhost:11434/v1",
+        api_key="ollama",
         quiet_mode=True,
         ephemeral_system_prompt=system_prompt,
         max_iterations=10,
         skip_context_files=True,
         skip_memory=True,
-        # Enable terminal so Hermes can execute our Python scripts
-        # Disable browser since Apify handles scraping
         disabled_toolsets=["browser"],
     )
 
