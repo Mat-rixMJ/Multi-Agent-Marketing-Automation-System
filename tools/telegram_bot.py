@@ -7,14 +7,25 @@ This is what makes the agent team *conversational*, not just a batch pipeline.
 """
 import json
 import os
+import importlib.util
 from pathlib import Path
 
 from dotenv import load_dotenv
 from telegram import Bot, Update
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
-from tools import kanban, memory
-from tools.llm_client import ask
+# Import sibling modules explicitly to avoid conflict with hermes-agent's tools package
+def _sibling_import(name, filename):
+    path = Path(__file__).parent / filename
+    spec = importlib.util.spec_from_file_location(name, path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+kanban = _sibling_import("tools.kanban", "kanban.py")
+memory = _sibling_import("tools.memory", "memory.py")
+llm_client = _sibling_import("tools.llm_client", "llm_client.py")
+ask = llm_client.ask
 
 load_dotenv()
 
