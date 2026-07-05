@@ -63,12 +63,16 @@
       ]
     },
     "competitor:Alphatech Systems": {
-      "timestamp": "2026-07-05T03:44:03.756285+00:00",
-      "content_hash": "5f58996f0858"
+      "timestamp": "2026-07-05T05:57:26.779932+00:00",
+      "content_hash": "d84f96092835"
     },
     "competitor:QuantConnect": {
-      "timestamp": "2026-07-05T03:45:08.276218+00:00",
-      "content_hash": "edbd8d6252f2"
+      "timestamp": "2026-07-05T05:58:30.569884+00:00",
+      "content_hash": "760b45a646f2"
+    },
+    "competitor:Zipline Trading": {
+      "timestamp": "2026-07-05T05:59:19.627682+00:00",
+      "content_hash": "113968b9d283"
     }
   },
   "history": [

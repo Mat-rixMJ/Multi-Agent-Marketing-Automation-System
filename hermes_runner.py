@@ -136,8 +136,8 @@ def run_skill_with_hermes(skill_name: str, task: str, model: str) -> str:
 
     # LLM fallback sequence: NVIDIA → OpenRouter → Ollama
     providers = [
-        ("https://integrate.api.nvidia.com/v1", os.getenv("NVIDIA_API_KEY"), os.getenv("NVIDIA_MODEL", "meta/llama-3.3-70b-instruct")),
-        ("https://openrouter.ai/api/v1", os.getenv("OPENROUTER_API_KEY"), os.getenv("OPENROUTER_MODEL", "nousresearch/hermes-3-llama-3.1-405b:free")),
+        ("https://integrate.api.nvidia.com/v1", os.getenv("NVIDIA_API_KEY"), os.getenv("NVIDIA_MODEL", "meta/llama-3.1-8b-instruct")),
+        ("https://openrouter.ai/api/v1", os.getenv("OPENROUTER_API_KEY"), "meta-llama/llama-3.2-3b-instruct:free"),
         ("http://localhost:11434/v1", "ollama", os.getenv("OLLAMA_MODEL", "qwen2.5-64k")),
     ]
 
