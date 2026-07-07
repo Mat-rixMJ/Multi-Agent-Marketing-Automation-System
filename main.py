@@ -51,8 +51,59 @@ def run_skill(skill: str) -> bool:
     return ok
 
 
+def fresh_start() -> None:
+    """Wipe all previous run data for a clean start."""
+    import shutil
+    from pathlib import Path
+
+    paths_to_remove = [
+        "kanban/board.json",
+        "data/memory.json",
+        "data/ads/meta_ads_raw.json",
+        "data/ads/meta_ads_shortlist.json",
+        "data/ads/ad_concepts.json",
+        "data/influencers/influencers.json",
+    ]
+    dirs_to_remove = ["obsidian_vault", "output"]
+
+    for p in paths_to_remove:
+        path = Path(p)
+        if path.exists():
+            path.unlink()
+
+    for d in dirs_to_remove:
+        path = Path(d)
+        if path.exists():
+            shutil.rmtree(path)
+
+    print("[FRESH START] All previous data cleared.")
+
+
 def main() -> None:
     from pathlib import Path
+    import sys
+
+    # Startup mode selection
+    print("=" * 50)
+    print("CROWDWISDOMTRADING MARKETING AGENTS")
+    print("=" * 50)
+    print()
+    print("Select run mode:")
+    print("  1. Fresh start (wipe all data, run from scratch)")
+    print("  2. Incremental (use memory, skip already-processed items)")
+    print()
+
+    if "--fresh" in sys.argv:
+        choice = "1"
+    elif "--incremental" in sys.argv:
+        choice = "2"
+    else:
+        choice = input("Enter choice [1/2]: ").strip()
+
+    if choice == "1":
+        fresh_start()
+
+    print()
 
     if not Path(kanban.BOARD_PATH).exists():
         kanban.seed_default_board()

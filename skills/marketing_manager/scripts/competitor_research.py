@@ -15,7 +15,7 @@ from tools import memory
 VAULT = Path(os.getenv("OBSIDIAN_VAULT_PATH", "./obsidian_vault")) / "Competitors"
 VAULT.mkdir(parents=True, exist_ok=True)
 
-# Fallback list — used when discovery hasn't run or is stale
+# Known competitors — these produce good research results
 _DEFAULT_COMPETITORS = [
     "Warrior Trading",
     "Bullish Bears",
@@ -25,42 +25,14 @@ _DEFAULT_COMPETITORS = [
 ]
 
 
-def _discover_competitors() -> list[str]:
-    """Use LLM to suggest 5 competitors based on NICHE env var."""
-    niche = os.getenv("NICHE", "retail trading, prop firm challenges, market commentary")
-    raw = ask(
-        "You are a competitive intelligence analyst. Given a niche description, "
-        "list exactly 5 direct competitors (company/brand names only, one per line, no numbering).",
-        f"Niche: {niche}",
-    )
-    # ponytail: naive line split — good enough for 5 names
-    names = [line.strip().strip("-•").strip() for line in raw.splitlines() if line.strip()]
-    return names[:5] if names else _DEFAULT_COMPETITORS
-
-
 def _get_competitors() -> list[str]:
-    """Return competitor list, auto-discovering every 7 days."""
-    prev = memory.get_previous_value("competitors_last_discovered")
-    if prev:
-        ts = prev.get("timestamp", "")
-        try:
-            last = datetime.fromisoformat(ts)
-            age_days = (datetime.now(timezone.utc) - last).days
-            if age_days < 7:
-                stored = prev.get("competitors")
-                if stored:
-                    print(f"  [MEMORY] Using cached competitors (discovered {age_days}d ago)")
-                    return stored
-        except (ValueError, TypeError):
-            pass
-
-    print("  [DISCOVERY] Auto-discovering competitors via LLM...")
-    competitors = _discover_competitors()
-    memory.mark_processed("competitors_last_discovered", {"competitors": competitors})
-    return competitors
+    """Return competitor list. Uses the curated default list for reliable results."""
+    # ponytail: auto-discovery via LLM picks hedge funds (Citadel, AQR) instead of
+    # retail trading education platforms. Hardcoded list produces better research.
+    return _DEFAULT_COMPETITORS
 
 
-COMPETITORS = _DEFAULT_COMPETITORS  # module-level default; main() uses _get_competitors()
+COMPETITORS = _DEFAULT_COMPETITORS
 
 SYSTEM_PROMPT = (
     "You are a marketing analyst. Given raw web search snippets about a trading-"
