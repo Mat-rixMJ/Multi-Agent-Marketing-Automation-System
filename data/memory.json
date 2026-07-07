@@ -213,6 +213,14 @@
     "outreach:The Trading Academy": {
       "timestamp": "2026-07-05T07:03:57.997568+00:00",
       "status": "drafted"
+    },
+    "ad:1342556074609663": {
+      "timestamp": "2026-07-07T06:34:12.682196+00:00",
+      "advertiser": "unknown"
+    },
+    "ad:1608823013548357": {
+      "timestamp": "2026-07-07T06:34:12.703096+00:00",
+      "advertiser": "unknown"
     }
   },
   "history": [
@@ -225,7 +233,17 @@
       "run": 2,
       "timestamp": "2026-07-05T07:03:58.022012+00:00",
       "summary": "**Backlog** (4): Marketing strategy brief for crowdwisdomtrading.com, Extract pain/hook/offer concepts from top ads, Draft ad script from best concept, Draft personalized cold outreach per influencer\n**In Progress** (0): \n**Review** (4): Competitor research: top 5 trading-education competitors, Scrape Meta Ads Library \u2014 retail trading niche, last 30 days, Find retail-trading influencers 200K+ subs, Repurpose provided YouTube sources into social content\n**Blocked** (0): \n**Done** (0): "
+    },
+    {
+      "run": 3,
+      "timestamp": "2026-07-07T06:39:54.419407+00:00",
+      "summary": "**Backlog** (1): Draft ad script from best concept\n**In Progress** (0): \n**Review** (5): Competitor research: top 5 trading-education competitors, Scrape Meta Ads Library \u2014 retail trading niche, last 30 days, Find retail-trading influencers 200K+ subs, Draft personalized cold outreach per influencer, Repurpose provided YouTube sources into social content\n**Blocked** (2): Marketing strategy brief for crowdwisdomtrading.com, Extract pain/hook/offer concepts from top ads\n**Done** (0): "
+    },
+    {
+      "run": 4,
+      "timestamp": "2026-07-07T06:49:00.205812+00:00",
+      "summary": "**Backlog** (0): \n**In Progress** (0): \n**Review** (5): Competitor research: top 5 trading-education competitors, Scrape Meta Ads Library \u2014 retail trading niche, last 30 days, Find retail-trading influencers 200K+ subs, Draft personalized cold outreach per influencer, Repurpose provided YouTube sources into social content\n**Blocked** (3): Marketing strategy brief for crowdwisdomtrading.com, Extract pain/hook/offer concepts from top ads, Draft ad script from best concept\n**Done** (0): "
     }
   ],
-  "run_count": 2
+  "run_count": 4
 }
