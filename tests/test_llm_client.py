@@ -4,6 +4,19 @@ import requests
 
 from tools import llm_client
 
+
+@pytest.fixture(autouse=True)
+def _env(monkeypatch):
+    # chat() checks for a provider API key before calling _call_api. Set a dummy
+    # key + provider/model so the mocked _call_api is reached regardless of
+    # whether a .env exists (passes in CI and in a keyless local clone). Also
+    # ensure demo mode is off so the real code path under test runs.
+    monkeypatch.setenv("LLM_PROVIDER", "openrouter")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-key")
+    monkeypatch.setenv("OPENROUTER_MODEL", "test-model")
+    monkeypatch.delenv("DEMO_MODE", raising=False)
+
+
 @patch("tools.llm_client._call_api")
 def test_llm_success(mock_post):
     mock_resp = MagicMock()
