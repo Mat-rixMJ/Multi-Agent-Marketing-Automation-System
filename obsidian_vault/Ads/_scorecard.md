@@ -4,41 +4,41 @@ Ranked by total score (out of 50). Higher = more likely to convert.
 
 | Rank | Script | Total | Verdict |
 |------|--------|-------|---------|
-| 1 | Angle: Aspiration (Draft) | 33/50 | Ready to shoot |
-| 2 | Angle: Fear (Draft) | 30/50 | Needs revision |
-| 3 | Angle: Social Proof (Draft) | 29/50 | Needs revision |
+| 1 | Angle: Social Proof (Draft) | 35/50 | Ready to shoot |
+| 2 | Angle: Fear (Draft) | 32/50 | Ready to shoot |
+| 3 | Angle: Aspiration (Draft) | 30/50 | Needs revision |
 
 ---
 
 ## Detailed Scores
 
-### #1: 2026-10-14_customers-of-diets-koot-india_aspiration.md
-- Hook Strength: 7/10
-- Pain Clarity: 9/10
-- Mechanism: 6/10
-- Proof Elements: 6/10
+### #1: 2026-10-14_customers-of-diets-koot-india_social_proof.md
+- Hook Strength: 9/10
+- Pain Clarity: 8/10
+- Mechanism: 8/10
+- Proof Elements: 5/10
 - CTA Urgency: 5/10
-- **Total: 33/50**
+- **Total: 35/50**
 - **Verdict: Ready to shoot**
 - Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
 
 ### #2: 2026-10-14_customers-of-diets-koot-india_fear.md
+- Hook Strength: 6/10
+- Pain Clarity: 8/10
+- Mechanism: 5/10
+- Proof Elements: 5/10
+- CTA Urgency: 8/10
+- **Total: 32/50**
+- **Verdict: Ready to shoot**
+- Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
+
+### #3: 2026-10-14_customers-of-diets-koot-india_aspiration.md
 - Hook Strength: 8/10
 - Pain Clarity: 9/10
 - Mechanism: 7/10
 - Proof Elements: 6/10
 - CTA Urgency: 3/10
 - **Total: 30/50**
-- **Verdict: Needs revision**
-- Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
-
-### #3: 2026-10-14_customers-of-diets-koot-india_social_proof.md
-- Hook Strength: 7/10
-- Pain Clarity: 8/10
-- Mechanism: 6/10
-- Proof Elements: 5/10
-- CTA Urgency: 3/10
-- **Total: 29/50**
 - **Verdict: Needs revision**
 - Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
 

@@ -1,245 +1,259 @@
-# Autonomous Multi-Agent Marketing & Intelligence Pipeline
+# Autonomous Multi-Agent Marketing Pipeline
 
 [![CI Pipeline](https://github.com/Mat-rixMJ/Multi-Agent-Marketing-Automation-System/actions/workflows/ci.yml/badge.svg)](https://github.com/Mat-rixMJ/Multi-Agent-Marketing-Automation-System/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
-An autonomous, multi-agent intelligence and campaign distribution engine designed to execute end-to-end competitive research, Meta ad library scraping, script writing, video scoring, cold outreach, and multi-format content distribution.
+A configurable, niche-agnostic marketing-intelligence system where four specialized agents run an end-to-end campaign workflow: competitor research, Meta Ads Library analysis, ad-script generation and scoring, influencer discovery and outreach, content repurposing, and a polished PDF report, coordinated over a JSON-backed Kanban board.
+
+Point it at any niche (fintech, fitness, SaaS) through a single config file. It ships with a fully offline demo mode so you can run the whole pipeline in seconds with no API keys.
 
 ---
 
-## ⚡ See It in Action (No Setup Required)
+## Screenshots
 
-### 📄 Sample Reports (AI-Generated, Production Quality)
+<table>
+  <tr>
+    <td colspan="2"><img src="docs/screenshots/dashboard.png" alt="Streamlit dashboard showing the Cult.fit AI Marketing Hub with pipeline stats and a Kanban board across Backlog, In Progress, Review, Blocked, and Done columns" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/report-overview.png" alt="Generated PDF report cover with executive summary, opportunities, next steps, and a data-ingestion metrics table" /></td>
+    <td width="50%"><img src="docs/screenshots/report-competitive-matrix.png" alt="Competitive positioning matrix and gap analysis page from the generated PDF report" /></td>
+  </tr>
+</table>
 
-| Report | Target | What's inside |
-|--------|--------|---------------|
-| **[Cult.fit Marketing Report](sample_reports/Cultfit_Marketing_Report_Clean.pdf)** | Indian fitness market | 5 competitors analyzed, 206 Meta ads scraped, 15 influencers discovered, A/B test plan, content calendar |
-| **[target company Report](sample_reports/target company_Marketing_Report_Clean.pdf)** | Retail trading education | 5 competitors with pricing, 235 ads analyzed, 73 YouTube creators, 3 ad script variants scored |
-
-> *These reports were generated end-to-end by the pipeline with zero manual editing. Hallucinated data is flagged with [VERIFICATION NEEDED] placeholders rather than published.*
-
----
-
-* **Live Interactive Dashboard:** [View Live Streamlit Dashboard](https://marketing-agents-dashboard.streamlit.app) *(Visualizes the current Kanban states, scorecard, competitor comparisons, and outreach drafts in your browser).*
-* **Zero-Setup Sample Outputs:** Explore the raw agent outputs produced in a full pipeline run:
-  * 📋 [Visual Kanban Task Board](sample_output/kanban/board.json)
-  * 📈 [Competitor Intelligence Briefs](sample_output/obsidian_vault/Competitors/) & [Strategy Brief](sample_output/obsidian_vault/Strategy/brief.md)
-  * 🎬 [Ad Script Scorecard](sample_output/obsidian_vault/Ads/_scorecard.md) & [Generated Script Variants](sample_output/obsidian_vault/Ads/)
-  * ✉️ [Influencer Discovery & Outreach Drafts](sample_output/obsidian_vault/Outreach/)
-  * 📅 [Social Media Content Calendar](sample_output/obsidian_vault/Content/_calendar.md)
-  * 📄 [Generated PDF Executive Report](sample_reports/Cultfit_Marketing_Report_Clean.pdf)
+*Left to right: the Streamlit dashboard, the generated executive report, and the competitive-positioning matrix. All three are real output from the pipeline, not mockups.*
 
 ---
 
-## 📸 Demo Walkthrough
+## Overview
 
-### Terminal Execution
+**The problem.** Early-stage marketing means repeating the same manual grind for every launch: research competitors, dig through ad libraries for proven hooks, write and judge ad scripts, find relevant creators, draft outreach, and package it all for stakeholders. It is slow, inconsistent, and hard to repeat across niches.
 
-```bash
-$ python main.py --fresh
-
-==================================================
-MARKETING INTELLIGENCE AGENTS
-==================================================
-Select run mode:
-  1. Fresh start (wipe all data, run from scratch)
-  2. Incremental (use memory, skip already-processed items)
-
-[FRESH START] All previous data cleared.
-
-──────────────────────────────────────────────────
-PIPELINE RUNNING
-──────────────────────────────────────────────────
-
-┌─ Agent 1/4: Marketing Manager
-│  Card: Competitor research: top 5 competitors
-│  Status: Backlog → In Progress
-  [1/2] Competitor research... ✓
-  [2/2] Generate strategy brief... ✓
-└─ Status: In Progress → Review ✓
-
-┌─ Agent 2/4: Ads Manager
-│  Card: Scrape Meta Ads Library — last 30 days
-│  Status: Backlog → In Progress
-  [1/5] Scrape Meta ads... ✓  (274 ads, 11 shortlisted)
-  [2/5] Extract ad concepts... ✓  (11 concepts)
-  [3/5] Generate ad scripts (3 variants)... ✓
-  [4/5] Score ad scripts... ✓  (Top: 39/50)
-  [5/5] Auto-revise weak scripts... ✓
-└─ Status: In Progress → Review ✓
-
-┌─ Agent 3/4: Influencer Outreach
-│  Card: Find influencers in target niche
-│  Status: Backlog → In Progress
-  [1/2] Find influencers... ✓  (68 channels)
-  [2/2] Draft outreach... ✓  (15 drafted)
-└─ Status: In Progress → Review ✓
-
-┌─ Agent 4/4: Content Repurposer
-│  Card: Repurpose video sources into social content
-│  Status: Backlog → In Progress
-  [1/1] Repurpose content... ✓  (5 videos → calendar)
-└─ Status: In Progress → Review ✓
-
-══════════════════════════════════════════════════
-KANBAN BOARD — FINAL STATE
-══════════════════════════════════════════════════
-**Backlog** (0) | **In Progress** (0) | **Review** (8) ✓
-```
-
-### Telegram Integration
-
-The pipeline pushes a detailed status report + PDF attachment to Telegram on every run:
-
-```
-📊 Pipeline Run Complete
-
-Outputs Generated:
-- Competitor briefs: 6
-- Ad scripts (incl. revisions): 5
-- Influencer outreach drafts: 15
-- Content pieces: 5
-
-Memory: 45 items tracked | Run #3
-
-📎 marketing_report.pdf attached
-```
-
-**Interactive commands:** `/status` · `/score` · `/competitors` · `/outreach @handle` · `/changes`
-
-### Generated PDF Reports
-
-The pipeline produces executive-ready PDF reports with:
-- Competitive positioning matrices with pricing comparison
-- Ad script scorecard with A/B test recommendations
-- Influencer discovery table with view counts and outreach templates
-- Content calendar with platform-specific posting schedule
-
-👉 **[View Cult.fit Report (PDF)](sample_reports/Cultfit_Marketing_Report_Clean.pdf)** · **[View Trading Report (PDF)](sample_reports/target company_Marketing_Report_Clean.pdf)**
+**The solution.** This project automates that workflow as four cooperating agents driven by a shared Kanban board. Each agent owns one stage, reads the configured niche, calls an LLM (with scraping where live data helps), writes structured Markdown into an Obsidian-style vault, and advances its card. The final stage compiles everything into an executive PDF. Swap the niche in `data/config.json` and the same pipeline retargets end to end.
 
 ---
 
-## 🛠️ What it Produces in a Single Run
+## Features
 
-1. **Competitor Discovery & Synthesis:** Auto-scrapes pricing and positioning details for the top 5 competitors in a retail trading niche, identifying exploitable gaps.
-2. **Meta Ads Analysis & Concept Mining:** Scrapes the Meta Ads Library, filters for niche relevance, and extracts direct-response hooks and offers.
-3. **Ad Script Writing & Priority Scoring:** Drafts 3 video ad script variants (Loss Aversion, Gain, Social Proof), grades them on a 50-point rubric, and automatically rewrites weak scripts.
-4. **Influencer Outreach Campaigns:** Finds YouTube creators in the niche and drafts personalized email and DM partnership pitches referencing their recent video titles.
-5. **Content Repurposing & Distribution Calendar:** Transcribes discovered videos and structures them into X threads, LinkedIn posts, and short video scripts.
-6. **Polished Stakeholder PDF:** Compiles all intelligence into a branded executive report with custom positioning matrices and charts.
+| Agent | Stage | What it does |
+|-------|-------|--------------|
+| **Marketing Manager** | Research & strategy | Researches the top competitors, writes per-competitor briefs, and synthesizes a positioning / gap-analysis strategy brief. |
+| **Ads Manager** | Creative pipeline | Pulls the Meta Ads Library, filters for niche relevance, extracts pain/hook/offer concepts, generates three ad-script variants (fear, aspiration, social proof), scores them on a 50-point rubric, and auto-revises weak scripts. |
+| **Influencer Outreach** | Discovery & outreach | Finds relevant YouTube creators, filters by reach, and drafts personalized outreach for each. |
+| **Content Repurposer** | Distribution | Turns source videos into platform-native assets (X thread, LinkedIn post, short-form script) and a weekly posting calendar. |
+
+Cross-cutting capabilities:
+
+- **Niche-agnostic by config.** One `config.json` drives company name, niche, and competitor list across every stage.
+- **Persistent memory.** `data/memory.json` deduplicates ads, tracks competitor positioning changes between runs, and skips already-drafted outreach so incremental runs do less work.
+- **Resilient LLM client.** On HTTP 429 it reads `Retry-After`, backs off, rotates through free models, and falls back to a local Ollama model if every cloud provider fails.
+- **Fact-check guardrails.** Generated scripts are scanned for unverified statistics and prohibited claims; the PDF generator runs a pre-flight integrity check that aborts on cross-niche leakage or duplicate content rather than shipping a broken report.
+- **Offline demo mode.** `--demo` runs the full pipeline with deterministic mock responses and local fixtures, no keys, no network, no Telegram.
+- **Interactive Telegram bot.** Query the latest run with `/status`, `/score`, `/competitors`, `/outreach @handle`, and `/changes`, or chat in free text.
+- **Streamlit dashboard.** Browse the Kanban state, competitive strategy, ad scorecard, and outreach drafts in the browser.
 
 ---
 
-## 📐 System Architecture
-
-The pipeline consists of 4 specialized agents coordinated by a poll-and-dispatch orchestrator running over a JSON-backed Kanban board.
+## Architecture
 
 ```mermaid
 graph TD
-    Orch[main.py Orchestrator] --> KB[Kanban Board JSON]
-    Orch --> M1[Marketing Manager Agent]
-    Orch --> M2[Ads Manager Agent]
-    Orch --> M3[Influencer Outreach Agent]
-    Orch --> M4[Content Repurposer Agent]
-    
-    M1 & M2 & M3 & M4 --> SharedTools[Shared Tool Layer]
-    
-    SharedTools --> Apify[Apify Scraping SDK]
-    SharedTools --> LLM[LLM Abstraction Layer]
-    SharedTools --> Mem[Persistent Memory System]
-    SharedTools --> Tele[Telegram Bot Gateway]
-    
+    Orch[main.py orchestrator] --> KB[Kanban board JSON]
+    Orch --> M1[Marketing Manager]
+    Orch --> M2[Ads Manager]
+    Orch --> M3[Influencer Outreach]
+    Orch --> M4[Content Repurposer]
+
+    M1 --> Tools[Shared tool layer]
+    M2 --> Tools
+    M3 --> Tools
+    M4 --> Tools
+
+    Tools --> Apify[Apify scrapers]
+    Tools --> LLM[LLM client]
+    Tools --> Mem[Persistent memory]
+    Tools --> Tele[Telegram bot]
+
     LLM --> NV[NVIDIA API]
     LLM --> OR[OpenRouter API]
     LLM --> OL[Local Ollama]
+
+    M1 --> Vault[Obsidian vault]
+    M2 --> Vault
+    M3 --> Vault
+    M4 --> Vault
+    Vault --> PDF[PDF report]
 ```
 
----
-
-## 🌟 Key Differentiators
-
-### 🧠 Persistent Agent Memory
-Prevents redundant work by caching state across runs. Competitors are tracked for positioning changes, Meta ads are deduplicated, cold outreach prospects are marked "drafted", and processed YouTube source videos are skipped. Subsequent runs execute in a fraction of the time.
-
-### 🔄 Closed-Loop Creative Optimization
-Ad scripts are evaluated against a strict 50-point copywriting rubric (evaluating hook strength, pain clarity, mechanism explanation, proof elements, and CTA urgency). Any script scoring below 40/50 is fed back to the copywriter agent along with the specific improvement notes and automatically rewritten.
-
-### 🛡️ Production-Grade Error Handling & Failovers
-Our LLM client is resilient to API outages and rate limits. On receiving a HTTP `429 (Too Many Requests)`, it reads the `Retry-After` header, backs off, rotates to a different free model, and retries. If all cloud providers fail, it automatically falls back to a local Ollama model.
-
-### 💬 Conversational Telegram Bot Gateway
-Enables interactive control over the pipeline. Interact with the active memory in real-time using custom slash commands (`/status`, `/score`, `/competitors`, `/changes`) or chat with the agent in free-text.
+The orchestrator (`main.py`) seeds the board and dispatches each skill's scripts in dependency order. `hermes_runner.py` offers an alternative runtime that executes the same skills through the Hermes Agent framework with model-invoked tool use.
 
 ---
 
-## 🚀 Quick Start
+## Tech stack
 
-### 1. Zero-Setup Demo Mode (Recommended)
-You can run the full 4-agent pipeline end-to-end **without requiring any API keys or scraper tokens**:
-```bash
-# Clone the repository
+- **Language:** Python 3.11+
+- **LLM providers:** OpenRouter, NVIDIA, local Ollama (OpenAI-compatible endpoints, with automatic failover)
+- **Scraping:** Apify (Meta Ads Library, YouTube channels and transcripts, web research)
+- **Reporting:** fpdf2 (PDF), Obsidian-style Markdown vault
+- **Dashboard:** Streamlit
+- **Bot:** python-telegram-bot
+- **Agent runtime (optional):** Hermes Agent
+- **Tooling:** pytest, ruff, GitHub Actions CI
+
+---
+
+## Quick start
+
+### Windows (PowerShell)
+
+```powershell
+# 1. Clone and enter the project
 git clone https://github.com/Mat-rixMJ/Multi-Agent-Marketing-Automation-System.git
 cd Multi-Agent-Marketing-Automation-System
 
-# Set up virtual environment
+# 2. Create and activate a virtual environment
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
 
-# Install dependencies
+# 3. Install dependencies
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
-# Run in offline demo mode (completes in ~10 seconds)
+# 4. Run the full pipeline offline (no keys needed)
 python main.py --demo
 ```
-This runs the full pipeline scripts, writes outputs to `obsidian_vault/`, and generates `output/marketing_report.pdf` exactly like a live run, using deterministic mock responses and local fixtures.
 
----
-
-### 2. Live Production Mode
-To run the live scapers and connect to cloud LLMs:
-
-1. Copy the environment template:
-   ```bash
-   cp .env.example .env
-   ```
-2. Open `.env` and fill in your keys:
-   * `APIFY_TOKEN` (from [Apify](https://console.apify.com))
-   * `LLM_PROVIDER` (choose `nvidia` or `openrouter`)
-   * `NVIDIA_API_KEY` or `OPENROUTER_API_KEY`
-   * `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` (optional, for webhooks)
-
-3. Run the live pipeline:
-   ```bash
-   python main.py --fresh
-   ```
-
----
-
-## 🧪 Testing
-
-The repository includes a comprehensive pytest suite covering the Kanban board, agent memory layer, script scoring parser, and LLM fallback logic.
+### macOS / Linux
 
 ```bash
-# Run the test suite
-pytest
+git clone https://github.com/Mat-rixMJ/Multi-Agent-Marketing-Automation-System.git
+cd Multi-Agent-Marketing-Automation-System
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+python main.py --demo
+```
+
+`--demo` writes competitor briefs, a strategy brief, ad concepts and scored scripts, outreach drafts, a content calendar, and `output/marketing_report.pdf`, all from local fixtures.
+
+### Run modes
+
+| Command | Mode | Needs API keys |
+|---------|------|----------------|
+| `python main.py --demo` | Offline demo with mock responses and local fixtures | No |
+| `python main.py --fresh` | Live run; wipes previous data and runs from scratch | Yes |
+| `python main.py --incremental` | Live run; uses memory to skip already-processed items | Yes |
+| `python hermes_runner.py` | Run skills through the Hermes Agent runtime | Yes |
+| `streamlit run app.py` | Launch the dashboard | No |
+
+### Live mode configuration
+
+Copy the environment template and fill in the keys you need:
+
+```powershell
+Copy-Item .env.example .env   # macOS/Linux: cp .env.example .env
+```
+
+| Key | Purpose |
+|-----|---------|
+| `APIFY_TOKEN` | Apify scrapers (Meta Ads, YouTube, web research) |
+| `LLM_PROVIDER` | `openrouter`, `nvidia`, or `ollama` |
+| `OPENROUTER_API_KEY` / `OPENROUTER_MODEL` | OpenRouter provider and model |
+| `NVIDIA_API_KEY` / `NVIDIA_MODEL` | NVIDIA provider and model |
+| `OLLAMA_MODEL` | Local Ollama fallback model |
+| `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | Telegram run reports and bot (optional) |
+| `OBSIDIAN_VAULT_PATH` / `KANBAN_BOARD_PATH` | Output locations (optional overrides) |
+| `NICHE` / `PRODUCT_DESCRIPTION` / `TARGET_SITE` | Niche configuration (optional) |
+
+### Tests and linting
+
+```powershell
+pytest          # unit tests: Kanban, memory, ad-score parsing, LLM failover
+ruff check .    # lint (same check CI runs)
 ```
 
 ---
 
-## 📐 What I'd Do Differently at Scale
+## Results and outputs
 
-If deploying this system into a high-throughput production environment:
-1. **Queue-Based Orchestration:** Replace the local poll-and-dispatch JSON Kanban loop with a message broker like RabbitMQ or Celery to handle parallel agent executions and distributed tasks.
-2. **Relational Database Storage:** Migrate the local `memory.json` file to a database like PostgreSQL with Redis caching for faster querying, transaction safety, and persistent analytics.
-3. **Async IO & Batching:** Rewrite scraper invocations and LLM requests using `asyncio` or `httpx` to run requests concurrently, reducing overall execution duration.
-4. **Structured JSON LLM Outputs:** Transition from raw text parsing to strict structured outputs utilizing libraries like Pydantic or Instructor to guarantee JSON schemas and eliminate parser failures.
-5. **Real-time Observability:** Integrate tracing tools like LangSmith or Phoenix to monitor agent steps, prompt effectiveness, latency, and tokens spent.
+A single run produces, written to the Obsidian vault and `output/`:
+
+- **5 competitor briefs** plus a synthesized strategy / gap-analysis brief
+- **206 raw Meta ads** analyzed, relevance-filtered, and ranked down to a **20-ad shortlist**
+- **20 ad concepts** extracted (pain / hook / offer / CTA)
+- **3 ad-script variants** (fear, aspiration, social proof), scored on a 50-point rubric, with weak scripts auto-revised
+- **15 influencer records** with **15 personalized outreach drafts**
+- **5 repurposed content pieces** plus a weekly posting calendar
+- **An 11-page executive PDF report** compiling all of the above
+
+Sample reports for two different niches are included to show the system is niche-agnostic:
+
+- [Cult.fit report](sample_reports/Cultfit_Marketing_Report_Clean.pdf) — Indian fitness market
+- [CrowdWisdomTrading report](sample_reports/CrowdWisdomTrading_Marketing_Report_Clean.pdf) — retail trading education
 
 ---
 
-## 📜 License
-This project is licensed under the permissive MIT License. See [LICENSE](file:///LICENSE) for details.
+## Project structure
 
-*For original intern assessment deliverables and requirements mapping, see [ASSESSMENT.md](file:///ASSESSMENT.md).*
+```
+.
+├── main.py                 # Orchestrator: seeds board, dispatches skills
+├── hermes_runner.py        # Alternative runtime via Hermes Agent
+├── app.py                  # Streamlit dashboard
+├── generate_pdf_report.py  # PDF compiler with pre-flight integrity checks
+├── skills/                 # The four agents
+│   ├── marketing_manager/
+│   ├── ads_manager/
+│   ├── influencer_outreach/
+│   └── content_repurposer/
+├── tools/                  # Shared layer
+│   ├── llm_client.py       # Multi-provider LLM with failover + demo mode
+│   ├── apify_client.py     # Scraper wrappers
+│   ├── kanban.py           # JSON Kanban board
+│   ├── memory.py           # Persistent run memory
+│   ├── config_manager.py   # Niche configuration
+│   └── telegram_bot.py     # Reports + interactive bot
+├── data/                   # Config and intermediate artifacts
+├── obsidian_vault/         # Markdown outputs (briefs, scripts, outreach)
+├── sample_reports/         # Example PDFs for two niches
+├── tests/                  # pytest suite
+└── docs/screenshots/       # README images
+```
+
+---
+
+## Engineering highlights
+
+Developed iteratively; a few milestones from the commit history:
+
+- **Multi-agent pipeline over a Kanban board** so stages run in dependency order with visible state transitions.
+- **Resilient LLM layer** with rate-limit recovery (`Retry-After` + model rotation) and an Ollama fallback, so a run survives provider outages.
+- **Closed-loop creative optimization:** scripts are scored on a 50-point rubric and auto-revised when they fall below threshold.
+- **Fact-check and integrity guardrails:** unverified-statistic scanning, prohibited-claim blocking, and a PDF pre-flight check that fails loudly on cross-niche leakage or duplicate content.
+- **Generalization from a single-niche prototype to a config-driven, niche-agnostic system,** verified against two different verticals.
+- **Persistent memory** for incremental runs that skip already-processed work.
+- **CI with ruff + pytest** on every push.
+
+---
+
+## What I learned
+
+Building this taught me that the hard part of an agent pipeline is not the model calls, it is everything around them: keeping state consistent across stages, failing safely when an external API rate-limits or returns nothing, and making outputs trustworthy. Writing the pre-flight checks and fact-check scanners changed how I think about LLM output, assume it will occasionally be wrong and build guardrails that catch it before it reaches a stakeholder. Generalizing the system from one niche to any niche also showed me how much hidden coupling lives in "just a prompt," and how a deterministic offline demo mode is worth the effort for anyone who wants to try the project without credentials.
+
+---
+
+## Limitations and roadmap
+
+- **Demo mode uses templated responses,** so the content is representative rather than genuinely researched. Live mode produces real, niche-specific analysis.
+- **Scrapers depend on specific Apify actors;** actor availability and schemas can change.
+- **Thin orchestration.** The Kanban loop is intentionally simple. At scale it would move to a real queue (Celery/RabbitMQ), memory to a database, and scraper/LLM calls to async batching.
+- **LLM output parsing** relies on robust-but-not-bulletproof JSON extraction; structured-output libraries (Pydantic/Instructor) would harden it.
+- **No observability yet;** tracing (LangSmith/Phoenix) would help tune prompts and track latency and cost.
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE).
