@@ -140,13 +140,6 @@ def pick_best_concept(concepts: list[dict]) -> dict:
     return scored[0] if scored else {}
 
 
-def main() -> None:
-    if not IN_PATH.exists():
-        print(f"{IN_PATH} not found — run extract_ad_concepts.py first.")
-        return
-    concepts = json.loads(IN_PATH.read_text(encoding="utf-8"))
-    if not concepts:
-        print("No concepts to work from.")
 def check_vertical_bleed(script: str, niche: str) -> list[str]:
     niche_lower = niche.lower()
     script_lower = script.lower()
@@ -305,7 +298,7 @@ def main() -> None:
             print(f"  [CONTENT BLOCK] Script for angle '{angle['name']}' contains prohibited content and was NOT saved.")
             for v in violations:
                 print(f"    -> {v}")
-            print(f"  [CONTENT BLOCK] Review and rewrite this script manually before production use.")
+            print("  [CONTENT BLOCK] Review and rewrite this script manually before production use.")
             continue  # Skip writing this script — don't silently ship blocked content
 
         # Post-generation LLM-based hallucination validation pass

@@ -100,6 +100,7 @@ def fresh_start() -> None:
 
 
 def main() -> None:
+    import os
     from pathlib import Path
     import sys
 
@@ -147,7 +148,7 @@ def main() -> None:
         print(f"\n+-- Agent {idx}/{len(skills_list)}: {skill.replace('_', ' ').title()}")
         print(f"|  Card: {card['title']}")
         kanban.move(card["id"], "In Progress")
-        print(f"|  Status: Backlog -> In Progress")
+        print("|  Status: Backlog -> In Progress")
 
         ok = run_skill(skill)
 
@@ -170,11 +171,14 @@ def main() -> None:
     except Exception as e:
         print(f"[PDF] Failed to generate: {e}")
 
-    # Send detailed summary + PDF to Telegram
-    telegram_bot.push_run_report()
-    pdf_path = Path("output/marketing_report.pdf")
-    if pdf_path.exists():
-        telegram_bot.send_document(str(pdf_path), caption="Marketing Intelligence Report - latest run")
+    # Send detailed summary + PDF to Telegram (skipped in demo mode — demo stays offline)
+    if os.getenv("DEMO_MODE") == "true":
+        print("[DEMO MODE] Skipping Telegram push.")
+    else:
+        telegram_bot.push_run_report()
+        pdf_path = Path("output/marketing_report.pdf")
+        if pdf_path.exists():
+            telegram_bot.send_document(str(pdf_path), caption="Marketing Intelligence Report - latest run")
 
 
 if __name__ == "__main__":

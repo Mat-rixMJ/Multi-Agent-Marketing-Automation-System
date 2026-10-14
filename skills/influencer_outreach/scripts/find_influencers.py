@@ -3,6 +3,7 @@ save full dossiers. Extend SEARCH_QUERIES / add actors for X, IG, TikTok using
 the same pattern.
 """
 import json
+import os
 from pathlib import Path
 
 from tools.apify_client import find_youtube_channels
@@ -108,6 +109,16 @@ def main() -> None:
 
     # Save discovered video URLs to a dedicated JSON file for Content Repurposer
     video_out = OUT_PATH.parent / "discovered_videos.json"
+    # ponytail: demo mode has no live Apify video scrape, so synthesize deterministic
+    # placeholder watch URLs from cached influencers to keep the content stage running
+    # offline. The demo transcript scraper returns a mock, so the URLs just need the
+    # "watch?v=" shape the repurposer filters on. Live runs use real scraped URLs.
+    if not video_urls and os.getenv("DEMO_MODE") == "true" and not video_out.exists():
+        import hashlib
+        for inf in influencers[:5]:
+            vid = hashlib.sha1((inf.get("handle") or "demo").encode()).hexdigest()[:11]
+            video_urls.append(f"https://www.youtube.com/watch?v={vid}")
+
     if video_urls:
         video_out.write_text(json.dumps(video_urls, indent=2), encoding="utf-8")
         print(f"Saved {len(video_urls)} discovered video URLs -> {video_out}")

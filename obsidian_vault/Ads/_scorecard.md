@@ -4,43 +4,43 @@ Ranked by total score (out of 50). Higher = more likely to convert.
 
 | Rank | Script | Total | Verdict |
 |------|--------|-------|---------|
-| 1 | Angle: Fear (Draft) | 39/50 | Needs revision |
-| 2 | Angle: Social Proof (Draft) | 30/50 | Needs revision |
-| 3 | Angle: Aspiration (Draft) | 23/50 | Needs revision |
+| 1 | Angle: Aspiration (Draft) | 33/50 | Ready to shoot |
+| 2 | Angle: Fear (Draft) | 30/50 | Needs revision |
+| 3 | Angle: Social Proof (Draft) | 29/50 | Needs revision |
 
 ---
 
 ## Detailed Scores
 
-### #1: 2026-07-16_difficulty-in-finding-a-compre_fear.md
+### #1: 2026-10-14_customers-of-diets-koot-india_aspiration.md
 - Hook Strength: 7/10
 - Pain Clarity: 9/10
 - Mechanism: 6/10
-- Proof Elements: 5/10
-- CTA Urgency: 8/10
-- **Total: 39/50**
-- **Verdict: Needs revision**
-- Top Improvement: Add specific numbers or testimonials that show the effectiveness of Cult.pass Elite and include a stronger sense of urgency in the CTA.
+- Proof Elements: 6/10
+- CTA Urgency: 5/10
+- **Total: 33/50**
+- **Verdict: Ready to shoot**
+- Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
 
-### #2: 2026-07-16_difficulty-in-finding-a-compre_social_proof.md
-- Hook Strength: 7/10
-- Pain Clarity: 6/10
-- Mechanism: 5/10
-- Proof Elements: 8/10
-- CTA Urgency: 4/10
+### #2: 2026-10-14_customers-of-diets-koot-india_fear.md
+- Hook Strength: 8/10
+- Pain Clarity: 9/10
+- Mechanism: 7/10
+- Proof Elements: 6/10
+- CTA Urgency: 3/10
 - **Total: 30/50**
 - **Verdict: Needs revision**
-- Top Improvement: Add a specific, concrete pain point and explain the mechanism more clearly. For example, include why personalized nutrition advice works better than generic suggestions.
+- Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
 
-### #3: 2026-07-16_difficulty-in-finding-a-compre_aspiration.md
+### #3: 2026-10-14_customers-of-diets-koot-india_social_proof.md
 - Hook Strength: 7/10
-- Pain Clarity: 3/10
-- Mechanism: 4/10
-- Proof Elements: 2/10
-- CTA Urgency: 5/10
-- **Total: 23/50**
+- Pain Clarity: 8/10
+- Mechanism: 6/10
+- Proof Elements: 5/10
+- CTA Urgency: 3/10
+- **Total: 29/50**
 - **Verdict: Needs revision**
-- Top Improvement: Add a clear and specific pain point (e.g., feeling stuck in a fitness routine, struggling to maintain motivation) and quantify the benefits or results (e.g., 'Join our community today and lose up to 5 pounds in the first month')
+- Top Improvement: Add a specific dollar figure or time frame to the hook to increase specificity.
 
 
 ---

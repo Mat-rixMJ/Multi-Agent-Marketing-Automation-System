@@ -7,7 +7,7 @@ from pathlib import Path
 TEST_BOARD = Path(tempfile.gettempdir()) / "test_board.json"
 os.environ["KANBAN_BOARD_PATH"] = str(TEST_BOARD)
 
-from tools import kanban
+from tools import kanban  # noqa: E402
 
 @pytest.fixture(autouse=True)
 def cleanup():

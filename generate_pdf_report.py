@@ -41,7 +41,6 @@ class Report(FPDF):
         super().__init__()
         self.config = config or {}
         self.written_text = []
-        import os
         font_dir = os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts")
         self.add_font("Arial", "", os.path.join(font_dir, "arial.ttf"), uni=True)
         self.add_font("Arial", "B", os.path.join(font_dir, "arialbd.ttf"), uni=True)
@@ -468,7 +467,8 @@ def draw_pricing_chart(pdf):
         # Consistency Check Log
         print("Pricing Consistency Check Passed: Matrix and Chart are sharing unified source of truth.")
         for comp in pdf.competitors_db:
-            if comp["price_type"] == "prop_fees": continue
+            if comp["price_type"] == "prop_fees":
+                continue
             c_val = next((p[1] for p in pricing_data if p[0] == comp["name"]), None)
             if c_val is not None:
                 print(f"  - {comp['name']}: Matrix shows {symbol}{comp['price']} ({comp['price_type']}) -> Chart plots {symbol}{c_val:.1f}")
@@ -570,13 +570,13 @@ def render_scorecard_and_test_plan(pdf):
     
     table_rows = []
     intro_lines = []
-    for l in lines:
-        if l.startswith("|") and "Rank" not in l and not all(c in "| -:" for c in l.strip()):
-            parts = [p.strip() for p in l.split("|")[1:-1]]
+    for ln in lines:
+        if ln.startswith("|") and "Rank" not in ln and not all(c in "| -:" for c in ln.strip()):
+            parts = [p.strip() for p in ln.split("|")[1:-1]]
             table_rows.append(parts)
-        elif not l.startswith("|") and not l.startswith("#"):
-            if l.strip():
-                intro_lines.append(l.strip())
+        elif not ln.startswith("|") and not ln.startswith("#"):
+            if ln.strip():
+                intro_lines.append(ln.strip())
                 
     if intro_lines:
         pdf.body_text("\n".join(intro_lines))
@@ -795,7 +795,7 @@ def build_pdf():
         name = f.stem.replace("_", " ")
         pdf.section_title(name)
         # Strip markdown headers, keep text
-        lines = [l for l in content.split("\n") if not l.startswith("#") and l.strip()]
+        lines = [ln for ln in content.split("\n") if not ln.startswith("#") and ln.strip()]
         pdf.body_text("\n".join(lines[:12]))
 
     pdf.add_page()
@@ -810,7 +810,7 @@ def build_pdf():
     pdf.section_title("Strategic Gap Analysis")
     synth_path = comp_dir / "_synthesis.md"
     synth = synth_path.read_text(encoding="utf-8") if synth_path.exists() else ""
-    lines = [l for l in synth.split("\n") if not l.startswith("#") and l.strip()]
+    lines = [ln for ln in synth.split("\n") if not ln.startswith("#") and ln.strip()]
     pdf.body_text("\n".join(lines))
 
     # --- Ads Analysis ---
@@ -893,7 +893,7 @@ def build_pdf():
                 title += " (Revised)"
             
             pdf.section_title(f"Variant: {title}")
-            lines = [l.strip() for l in script_part.split("\n") if not l.startswith("```") and l.strip()]
+            lines = [ln.strip() for ln in script_part.split("\n") if not ln.startswith("```") and ln.strip()]
             pdf.body_text("\n".join(lines))
             pdf.ln(4)
 
@@ -997,7 +997,7 @@ def build_pdf():
         content = actual_content_files[0].read_text(encoding="utf-8")
         lines = content.split("\n")
         pdf.section_title(f"Sample Repurposed File: {actual_content_files[0].stem}")
-        text_lines = [l for l in lines if not l.startswith("#") and l.strip()]
+        text_lines = [ln for ln in lines if not ln.startswith("#") and ln.strip()]
         pdf.body_text("\n".join(text_lines[:25]))
 
     # --- Pre-flight Check ---

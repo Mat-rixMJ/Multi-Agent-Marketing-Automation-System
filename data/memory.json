@@ -1,190 +1,190 @@
 {
   "processed": {
     "competitor:Gold's Gym India": {
-      "timestamp": "2026-07-15T20:11:18.840773+00:00",
-      "content_hash": "750f4f4937fa"
+      "timestamp": "2026-10-14T09:33:57.001024+00:00",
+      "content_hash": "487140bea8eb"
     },
     "competitor:Anytime Fitness India": {
-      "timestamp": "2026-07-15T20:12:17.246551+00:00",
-      "content_hash": "65b6ad5c7ea3"
+      "timestamp": "2026-10-14T09:33:57.010693+00:00",
+      "content_hash": "0424f2f8dfa9"
     },
     "competitor:HealthifyMe": {
-      "timestamp": "2026-07-15T20:13:27.868682+00:00",
-      "content_hash": "dc029d0c6009"
+      "timestamp": "2026-10-14T09:33:57.020554+00:00",
+      "content_hash": "3c33b21b2d13"
     },
     "competitor:Fittr": {
-      "timestamp": "2026-07-15T20:14:16.538613+00:00",
-      "content_hash": "2122c46192e8"
+      "timestamp": "2026-10-14T09:33:57.033087+00:00",
+      "content_hash": "143b95bc0a12"
     },
     "competitor:Sarva Yoga": {
-      "timestamp": "2026-07-15T20:15:25.687137+00:00",
-      "content_hash": "f812375d1c35"
+      "timestamp": "2026-10-14T09:33:57.043626+00:00",
+      "content_hash": "22313553851f"
     },
-    "ad:1718296222497005": {
-      "timestamp": "2026-07-15T20:22:31.747749+00:00",
+    "ad:939704134288489": {
+      "timestamp": "2026-10-14T09:33:57.084867+00:00",
       "advertiser": "unknown"
     },
-    "ad:2465308067323077": {
-      "timestamp": "2026-07-15T20:22:31.761970+00:00",
+    "ad:1327338938558058": {
+      "timestamp": "2026-10-14T09:33:57.093776+00:00",
       "advertiser": "unknown"
     },
-    "ad:2301234493945423": {
-      "timestamp": "2026-07-15T20:22:31.775469+00:00",
+    "ad:1403051087657402": {
+      "timestamp": "2026-10-14T09:33:57.102666+00:00",
       "advertiser": "unknown"
     },
-    "ad:989528853790106": {
-      "timestamp": "2026-07-15T20:22:31.791453+00:00",
+    "ad:1951626175600828": {
+      "timestamp": "2026-10-14T09:33:57.111137+00:00",
       "advertiser": "unknown"
     },
-    "ad:1030951156018346": {
-      "timestamp": "2026-07-15T20:22:31.808014+00:00",
+    "ad:1491034545598938": {
+      "timestamp": "2026-10-14T09:33:57.119435+00:00",
       "advertiser": "unknown"
     },
-    "ad:2174851439977299": {
-      "timestamp": "2026-07-15T20:22:31.825290+00:00",
+    "ad:1782611192338861": {
+      "timestamp": "2026-10-14T09:33:57.128123+00:00",
       "advertiser": "unknown"
     },
-    "ad:888043053702932": {
-      "timestamp": "2026-07-15T20:22:31.839172+00:00",
+    "ad:1181037387378658": {
+      "timestamp": "2026-10-14T09:33:57.136191+00:00",
       "advertiser": "unknown"
     },
-    "ad:4098488753617882": {
-      "timestamp": "2026-07-15T20:22:31.853389+00:00",
+    "ad:772637715312177": {
+      "timestamp": "2026-10-14T09:33:57.145504+00:00",
       "advertiser": "unknown"
     },
-    "ad:1444153207471191": {
-      "timestamp": "2026-07-15T20:22:31.868172+00:00",
+    "ad:698291516602071": {
+      "timestamp": "2026-10-14T09:33:57.154682+00:00",
       "advertiser": "unknown"
     },
-    "ad:2133736427190011": {
-      "timestamp": "2026-07-15T20:22:31.883257+00:00",
+    "ad:1950736065741101": {
+      "timestamp": "2026-10-14T09:33:57.163189+00:00",
       "advertiser": "unknown"
     },
-    "ad:998603296324358": {
-      "timestamp": "2026-07-15T20:22:31.899243+00:00",
+    "ad:1684015695643307": {
+      "timestamp": "2026-10-14T09:33:57.171817+00:00",
       "advertiser": "unknown"
     },
-    "ad:1291804272786705": {
-      "timestamp": "2026-07-15T20:22:31.913808+00:00",
+    "ad:2020195402124726": {
+      "timestamp": "2026-10-14T09:33:57.179787+00:00",
       "advertiser": "unknown"
     },
-    "ad:1380134140704174": {
-      "timestamp": "2026-07-15T20:22:31.928650+00:00",
+    "ad:4102535479997656": {
+      "timestamp": "2026-10-14T09:33:57.186864+00:00",
       "advertiser": "unknown"
     },
-    "ad:4636099386620256": {
-      "timestamp": "2026-07-15T20:22:31.942624+00:00",
+    "ad:2351242618663752": {
+      "timestamp": "2026-10-14T09:33:57.195767+00:00",
       "advertiser": "unknown"
     },
-    "ad:1038260025560561": {
-      "timestamp": "2026-07-15T20:22:31.959153+00:00",
+    "ad:700087959810166": {
+      "timestamp": "2026-10-14T09:33:57.204363+00:00",
       "advertiser": "unknown"
     },
-    "ad:1001293576134201": {
-      "timestamp": "2026-07-15T20:22:31.974734+00:00",
+    "ad:810820555113030": {
+      "timestamp": "2026-10-14T09:33:57.213391+00:00",
       "advertiser": "unknown"
     },
-    "ad:1568906481579041": {
-      "timestamp": "2026-07-15T20:22:32.020445+00:00",
+    "ad:1573628390550385": {
+      "timestamp": "2026-10-14T09:33:57.222194+00:00",
       "advertiser": "unknown"
     },
-    "ad:1039688251927297": {
-      "timestamp": "2026-07-15T20:22:32.035079+00:00",
+    "ad:1374831957443825": {
+      "timestamp": "2026-10-14T09:33:57.229587+00:00",
       "advertiser": "unknown"
     },
-    "ad:1566382838406357": {
-      "timestamp": "2026-07-15T20:22:32.050357+00:00",
+    "ad:802559266164948": {
+      "timestamp": "2026-10-14T09:33:57.238253+00:00",
       "advertiser": "unknown"
     },
-    "ad:772451342598162": {
-      "timestamp": "2026-07-15T20:22:32.065958+00:00",
+    "ad:1626315988357094": {
+      "timestamp": "2026-10-14T09:33:57.248486+00:00",
       "advertiser": "unknown"
     },
     "outreach:Garage Gym Reviews": {
-      "timestamp": "2026-07-16T02:05:56.046586+00:00",
+      "timestamp": "2026-10-14T09:33:57.405447+00:00",
       "status": "drafted"
     },
     "outreach:That Fit Friend": {
-      "timestamp": "2026-07-16T02:06:29.074055+00:00",
+      "timestamp": "2026-10-14T09:33:57.420857+00:00",
       "status": "drafted"
     },
     "outreach:TOP 1%": {
-      "timestamp": "2026-07-16T02:06:57.448691+00:00",
+      "timestamp": "2026-10-14T09:33:57.432660+00:00",
       "status": "drafted"
     },
     "outreach:HealthifyMe": {
-      "timestamp": "2026-07-16T02:07:27.410459+00:00",
+      "timestamp": "2026-10-14T09:33:57.443943+00:00",
       "status": "drafted"
     },
     "outreach:Desi Gym Reviews": {
-      "timestamp": "2026-07-16T02:07:59.509401+00:00",
+      "timestamp": "2026-10-14T09:33:57.454356+00:00",
       "status": "drafted"
     },
     "outreach:One Crazy Introvert": {
-      "timestamp": "2026-07-16T02:08:28.322401+00:00",
+      "timestamp": "2026-10-14T09:33:57.465171+00:00",
       "status": "drafted"
     },
     "outreach:Khojdeal": {
-      "timestamp": "2026-07-16T02:09:01.129757+00:00",
+      "timestamp": "2026-10-14T09:33:57.476168+00:00",
       "status": "drafted"
     },
     "outreach:Shivanidubey": {
-      "timestamp": "2026-07-16T02:09:34.708897+00:00",
+      "timestamp": "2026-10-14T09:33:57.485757+00:00",
       "status": "drafted"
     },
     "outreach:Freccero": {
-      "timestamp": "2026-07-16T02:10:00.673419+00:00",
+      "timestamp": "2026-10-14T09:33:57.496113+00:00",
       "status": "drafted"
     },
     "outreach:Avinash Kumar": {
-      "timestamp": "2026-07-16T02:10:29.026150+00:00",
+      "timestamp": "2026-10-14T09:33:57.504691+00:00",
       "status": "drafted"
     },
     "outreach:Basement Brandon": {
-      "timestamp": "2026-07-16T02:10:57.669874+00:00",
+      "timestamp": "2026-10-14T09:33:57.514586+00:00",
       "status": "drafted"
     },
     "outreach:Nidhi Katiyar": {
-      "timestamp": "2026-07-16T02:11:31.800106+00:00",
+      "timestamp": "2026-10-14T09:33:57.524481+00:00",
       "status": "drafted"
     },
     "outreach:JUYAL VLOGS": {
-      "timestamp": "2026-07-16T02:12:03.334614+00:00",
+      "timestamp": "2026-10-14T09:33:57.535073+00:00",
       "status": "drafted"
     },
     "outreach:livfitin Media": {
-      "timestamp": "2026-07-16T02:12:35.413378+00:00",
+      "timestamp": "2026-10-14T09:33:57.544557+00:00",
       "status": "drafted"
     },
     "outreach:Hybrid Resistance": {
-      "timestamp": "2026-07-16T02:13:04.422570+00:00",
+      "timestamp": "2026-10-14T09:33:57.555309+00:00",
       "status": "drafted"
     },
-    "video:M-2y5lheCpI": {
-      "timestamp": "2026-07-16T02:15:14.673337+00:00",
-      "url": "https://www.youtube.com/watch?v=M-2y5lheCpI"
+    "video:829d2381f6a": {
+      "timestamp": "2026-10-14T09:33:57.598733+00:00",
+      "url": "https://www.youtube.com/watch?v=829d2381f6a"
     },
-    "video:ToaNkT8a7QA": {
-      "timestamp": "2026-07-16T02:21:57.374765+00:00",
-      "url": "https://www.youtube.com/watch?v=ToaNkT8a7QA"
+    "video:75bd5877b48": {
+      "timestamp": "2026-10-14T09:33:57.610711+00:00",
+      "url": "https://www.youtube.com/watch?v=75bd5877b48"
     },
-    "video:1aajXDuvoXg": {
-      "timestamp": "2026-07-16T02:31:46.474408+00:00",
-      "url": "https://www.youtube.com/watch?v=1aajXDuvoXg"
+    "video:cb69789bdfe": {
+      "timestamp": "2026-10-14T09:33:57.622874+00:00",
+      "url": "https://www.youtube.com/watch?v=cb69789bdfe"
     },
-    "video:gtHSD4bwNvI": {
-      "timestamp": "2026-07-16T02:34:24.683844+00:00",
-      "url": "https://www.youtube.com/watch?v=gtHSD4bwNvI"
+    "video:d54ec2d7936": {
+      "timestamp": "2026-10-14T09:33:57.631963+00:00",
+      "url": "https://www.youtube.com/watch?v=d54ec2d7936"
     },
-    "video:PfiFqdQ7tk8": {
-      "timestamp": "2026-07-16T02:42:27.190862+00:00",
-      "url": "https://www.youtube.com/watch?v=PfiFqdQ7tk8"
+    "video:e93883fe1f1": {
+      "timestamp": "2026-10-14T09:33:57.643876+00:00",
+      "url": "https://www.youtube.com/watch?v=e93883fe1f1"
     }
   },
   "history": [
     {
       "run": 1,
-      "timestamp": "2026-07-16T02:43:11.159861+00:00",
+      "timestamp": "2026-10-14T09:33:57.712153+00:00",
       "summary": "**Backlog** (4): Marketing strategy brief for Cult.fit, Extract pain/hook/offer concepts from top ads, Draft ad script from best concept, Draft personalized cold outreach per influencer\n**In Progress** (0): \n**Review** (4): Competitor research: top 5 Fitness centers, workout subscriptions, and D2C health supplements in India competitors, Scrape Meta Ads Library \u2014 Fitness centers, workout subscriptions, and D2C health supplements in India, last 30 days, Find Fitness centers, workout subscriptions, and D2C health supplements in India influencers, Repurpose provided YouTube sources into social content\n**Blocked** (0): \n**Done** (0): "
     }
   ],

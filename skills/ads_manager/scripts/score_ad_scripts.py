@@ -10,6 +10,8 @@ import json
 import os
 from pathlib import Path
 
+import re
+
 from tools.llm_client import ask
 from tools.config_manager import load_config
 
@@ -33,8 +35,6 @@ After scoring, give:
 Output as clean JSON with keys: hook, pain, mechanism, proof, cta, total, verdict, top_improvement
 No markdown, just the JSON object."""
 
-
-import re
 
 def parse_robust_json(raw: str) -> dict:
     cleaned = raw.strip()

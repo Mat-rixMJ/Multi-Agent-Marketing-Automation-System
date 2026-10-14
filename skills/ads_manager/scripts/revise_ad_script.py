@@ -62,7 +62,6 @@ def main() -> None:
         return
 
     import json
-    import re
     from tools import config_manager
     from skills.ads_manager.scripts.generate_ad_script import check_vertical_bleed, scan_for_unverified_statistics
 
@@ -129,7 +128,7 @@ def main() -> None:
             "an unverified scale claim.\n\n"
             "Output the corrected script only without markdown blocks."
         )
-        print(f"  [STAT VALIDATION] Running adversarial Stage B fact-check on revised script...")
+        print("  [STAT VALIDATION] Running adversarial Stage B fact-check on revised script...")
         revised = ask(fact_check_prompt, revised)
 
         # Post-process cleanup of unverified stats

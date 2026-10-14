@@ -10,10 +10,7 @@ Rate limit strategy:
 import json
 import os
 import time
-import uuid
-import sys
 import requests
-from pathlib import Path
 from tools import config_manager
 from dotenv import load_dotenv
 
@@ -54,58 +51,52 @@ MAX_RETRIES = 7
 # Using a list because Python closures can't rebind a bare int from an inner scope.
 _demo_extract_counter = [-1]
 
+# ponytail: niche-agnostic concept templates. {company} is filled from config at
+# response time so the demo pool never leaks a hardcoded vertical into the report
+# (generate_pdf_report.pre_flight_check bans cross-niche terms like "trading").
 _CONCEPT_VARIANTS = [
     {
-        "pain_point": "Retail traders blow prop firm challenges because they overtrade under pressure.",
-        "hook": "Stop failing prop challenges. Here is the disciplined edge serious traders use.",
-        "offer_mechanism": "Real-time community alerts and daily pre-market prep for just $49/mo.",
-        "cta": "Start your CWT trial today",
-        "notes": "Loss aversion angle targeting prop firm traders."
+        "pain_point": "People overpay for generic programs that are not built around their own goals.",
+        "hook": "Stop paying for one-size-fits-all plans that ignore how you actually live.",
+        "offer_mechanism": "A personalized plan and real coaching from {company} for one simple monthly price.",
+        "cta": "Start your {company} plan today",
+        "notes": "Value/personalization angle."
     },
     {
-        "pain_point": "Beginner day traders lose money copying",
-        "hook": "Tired of guessing the market direction?",
-        "offer_mechanism": "company_name premium signals",
-        "cta": "Join company_name today",
-        "notes": "Price comparison angle targeting guru-fatigued traders."
+        "pain_point": "Beginners feel overwhelmed and quit before they ever see results.",
+        "hook": "Tired of starting over every few weeks?",
+        "offer_mechanism": "{company} gives you a guided, step-by-step path with support that keeps you going.",
+        "cta": "Join {company} today",
+        "notes": "Beginner-friendly onboarding angle."
     },
     {
-        "pain_point": "Forex traders struggle to read institutional order flow without expensive tools.",
-        "hook": "Retail forex traders are always one step behind institutions. Until now.",
-        "offer_mechanism": "Daily institutional bias reports and real-time alerts delivered to Telegram for $49/mo.",
-        "cta": "Get your first week free",
-        "notes": "Institutional edge angle for forex audience."
+        "pain_point": "Busy people cannot stick to a routine that demands hours they do not have.",
+        "hook": "No time? That is exactly who this is built for.",
+        "offer_mechanism": "Short, flexible sessions and reminders from {company} that fit a packed schedule.",
+        "cta": "See how {company} fits your week",
+        "notes": "Convenience angle for busy audience."
     },
     {
-        "pain_point": "Swing traders miss entries because they have no structured pre-market routine.",
-        "hook": "Most swing traders check charts randomly. Top performers follow a strict morning plan.",
-        "offer_mechanism": "Pre-market watchlists and swing trade setups delivered daily for $49/mo.",
-        "cta": "Build your edge with CWT",
-        "notes": "Routine-building angle for swing traders."
+        "pain_point": "Most options promise results but offer no community or accountability.",
+        "hook": "Going it alone is why most people give up.",
+        "offer_mechanism": "An active {company} community plus progress tracking that keeps you accountable.",
+        "cta": "Switch to {company}",
+        "notes": "Community and accountability angle."
     },
     {
-        "pain_point": "Options traders overpay for signals with no community accountability or support.",
-        "hook": "Paying $200/mo for options alerts with zero community support? You deserve better.",
-        "offer_mechanism": "Options flow alerts, daily market commentary, and Discord community for $49/mo.",
-        "cta": "Switch to CWT and save",
-        "notes": "Value comparison angle targeting options traders."
+        "pain_point": "Customers cannot tell whether a program's claims are real or marketing.",
+        "hook": "Real results, shown honestly. No inflated promises.",
+        "offer_mechanism": "{company} shares transparent, member-sourced outcomes instead of hype.",
+        "cta": "See real {company} results",
+        "notes": "Transparency and social-proof angle."
     },
     {
-        "pain_point": "New traders blow their first account within weeks because they skip risk management basics.",
-        "hook": "Your first account does not have to be your last. Here is what most gurus never teach.",
-        "offer_mechanism": "Structured daily trade plans and 1% risk rule alerts from $49/mo.",
-        "cta": "Start trading smarter today",
-        "notes": "Beginner safety angle with education framing."
-    },
-    {
-        "pain_point": "Part-time traders miss the best setups because they cannot watch charts all day.",
-        "hook": "What if you could get pre-screened setups delivered before the market opens?",
         "advertiser": "Mock Advertiser",
-        "pain_point": "Users struggle with generic mock data.",
-        "hook": "Stop looking at old trading examples.",
-        "offer_mechanism": "Dynamic generated mock.",
-        "cta": "Click here.",
-        "notes": "Mock data."
+        "pain_point": "People lose motivation when they cannot see their own progress.",
+        "hook": "What if every week showed you proof you were improving?",
+        "offer_mechanism": "{company} tracks your progress and celebrates every milestone with you.",
+        "cta": "Track your progress with {company}",
+        "notes": "Motivation and progress-tracking angle."
     }
 ]
 
@@ -125,12 +116,20 @@ def _get_demo_response(system: str, prompt: str) -> str:
 
     elif "extract" in combined and "pain_point" in combined:
         _demo_extract_counter[0] = (_demo_extract_counter[0] + 1) % len(_CONCEPT_VARIANTS)
-        chosen = _CONCEPT_VARIANTS[_demo_extract_counter[0]]
+        chosen = {k: (v.format(company=company) if isinstance(v, str) else v)
+                  for k, v in _CONCEPT_VARIANTS[_demo_extract_counter[0]].items()}
+        # The downstream PDF pre-flight check requires a unique pain_point per concept.
+        # A real LLM produces ad-specific pain points; mirror that by anchoring the
+        # demo pain_point to this ad's advertiser (parsed from the prompt).
+        import re as _re
+        m = _re.search(r"advertiser:\s*(.+)", prompt, _re.IGNORECASE)
+        advertiser = m.group(1).splitlines()[0].strip() if m else ""
+        if advertiser and advertiser.lower() != "unknown":
+            chosen["pain_point"] = f"Customers of {advertiser}: {chosen['pain_point']}"
         return json.dumps(chosen)
 
     elif ("score" in combined or "rubric" in combined) and "revising an ad script" not in combined:
         if "output as clean json" in combined or ("hook" in combined and "pain" in combined and "mechanism" in combined):
-            import random as _random
             _seed = abs(hash(prompt[:80])) % 10
             total = 28 + _seed
             hook = min(10, 6 + _seed % 4)
@@ -188,7 +187,7 @@ Ranked by total score (out of 50). Higher = more likely to convert.
 
 ### Testing Parameters
 - **Budget Split:** Equal 33% split ($50/day per variant).
-- **Target Audience:** Retail traders, Forex, and Prop Firm enthusiasts.
+- **Target Audience:** Prospective {company} customers in the target niche.
 - **Duration:** 14 days.
 """
 
@@ -196,10 +195,10 @@ Ranked by total score (out of 50). Higher = more likely to convert.
         return f"""# Ad Script — Revised Version
 
 ## Script
-[Visual: A person looking at a chart, then opening the {company} dashboard.]
-Narrator: "Are you tired of guessing the market direction?"
-[Visual: Screen recording showing {company} signals hitting targets.]
-Narrator: "Stop guessing. Start knowing. Our community provides the exact setups you need."
+[Visual: A person struggling, then opening the {company} app.]
+Narrator: "Tired of plans that never stick?"
+[Visual: Screen recording showing {company} guiding them step by step.]
+Narrator: "Stop guessing. Start making progress. {company} gives you a plan built around you."
 [Visual: Text on screen: Join today.]
 Narrator: "Join {company} today."
 """
@@ -217,90 +216,89 @@ Best,
 The {company} Team"""
 
     elif "Synthesize these competitor summaries" in prompt:
-        return f"""We successfully conducted competitive research across 5 major platforms, identifying pricing and positioning gaps for {company}'s launch.
+        return f"""We conducted competitive research across the main players in the niche, identifying pricing and positioning gaps for {company}.
 
-1. **Pricing:** Most competitors charge $100-$200/mo. At a lower price point, {company} is highly disruptive.
-2. **Community:** Competitors offer basic Discord rooms. We can emphasize our interactive, mentor-led environment.
-3. **Unbiased Strategy Reviews:** Competitors promote their own indicator systems. {company} can stand out by providing transparent, crowd-sourced alerts."""
+1. **Pricing:** Most competitors sit at a premium price point. {company} can win on clearer value for the money.
+2. **Community:** Competitors offer little ongoing support. {company} can emphasize an interactive, guided experience.
+3. **Transparency:** Competitors lean on marketing claims. {company} can stand out with honest, member-sourced results."""
 
     elif "synthesis" in combined or "synthesize" in combined:
-        return """# Competitive Strategy & Gap Analysis
+        return f"""# Competitive Strategy & Gap Analysis
 
 ## Market Gaps
-1. **Affordable Entry-Level Subscriptions:** Competitors charge high annual fees ($997+) or expensive monthly rates ($297+). There is a massive gap for a low-cost, high-value monthly option at $49/mo.
-2. **Community-First Learning:** Many platforms are centered around a single guru. Building a decentralized, peer-to-peer sharing community offers a unique value proposition.
-3. **Unbiased Strategy Reviews:** Competitors promote their own indicator systems. CrowdWisdomTrading can stand out by providing transparent, crowd-sourced trading alerts."""
+1. **Clear, Affordable Entry Point:** Competitors push high annual commitments. There is room for a low-friction, high-value monthly option.
+2. **Guided, Community-First Experience:** Many offerings leave customers on their own. A supportive, guided path is a differentiator.
+3. **Honest Positioning:** Competitors rely on inflated claims. {company} can stand out with transparent, member-sourced outcomes."""
 
     elif "Marketing Strategy Brief" in system or "marketing strategist" in system:
         return f"""# Marketing Strategy Brief: {company}
 
-{company} is the ultimate community-driven hub. We offer real-time alerts, daily analysis, and educational resources, contrasting sharply with high-cost competitor plans.
+{company} is a community-driven offering with guided plans, ongoing support, and honest results, in contrast to high-cost, impersonal competitors.
 
 ## Target Audience Segments
-- **Beginners:** Overwhelmed by jargon.
+- **Beginners:** Overwhelmed and unsure where to start.
 - **Intermediate:** Struggling with consistency.
-- **Pros:** Looking for community and networking.
+- **Advanced:** Looking for community and accountability.
 
 ## Positioning Statements
-- More affordable than the rest.
-- Better community support.
-- Transparent and real-time.
+- Clearer value than the rest.
+- Better ongoing support.
+- Transparent and honest.
 
-## Compliance and Regulatory Notice
-All marketing materials must state: *Trading contains substantial risk. Past performance is not indicative of future results. {company} is not a registered broker-dealer or financial advisor.*"""
+## Compliance Notice
+All marketing materials should avoid unverified claims and clearly state what results are typical versus exceptional."""
 
     elif "original 30-45 second video ad script" in combined:
         if "FEAR and LOSS AVERSION" in prompt:
-            return f"""[Visual: Red charts and frustrated person]
-Narrator: "Stop paying gurus thousands. Join {company}. Real-time community alerts, support, and pre-market prep."
+            return f"""[Visual: Frustrated person who keeps falling off track]
+Narrator: "Stop wasting money on plans that never stick. {company} gives you a guided path and real support."
 [Visual: Logo]
-Narrator: "Click here to stop losing."
+Narrator: "Start today before you give up again."
 """
         elif "ASPIRATION and DESIRE" in prompt:
-            return f"""[Visual: Green charts and happy person]
-Narrator: "Imagine knowing the move before it happens."
-[Visual: Showing {company} dashboard]
+            return f"""[Visual: Confident, happy person making progress]
+Narrator: "Imagine finally seeing the results you have been chasing."
+[Visual: Showing the {company} app]
 Narrator: "Unlock your potential with {company} today."
 """
         elif "SOCIAL PROOF" in prompt:
-            return f"""[Visual: Discord chat scrolling quickly]
-Narrator: "Join thousands of members who are already seeing results."
-[Visual: Showing {company} dashboard]
-Narrator: "{company} gives you real-time alerts, daily pre-market prep, and a community that actually shares what works."
+            return f"""[Visual: Member community feed scrolling]
+Narrator: "Join thousands of members already seeing results."
+[Visual: Showing the {company} app]
+Narrator: "{company} gives you a guided plan, ongoing support, and a community that shares what actually works."
 """
         else:
-            return """# Ad Script — Social Proof Angle
+            return f"""# Ad Script — Social Proof Angle
 
 ## Script
-[Visual: Screen showing an active trading community chat feed with members posting alerts.]
-Narrator (Voiceover): "Thousands of retail traders have ditched expensive gurus and switched to community-powered intelligence."
-[Visual: Pre-market chart analysis on screen with CWT branding.]
-Narrator: "CrowdWisdomTrading gives you real-time alerts, daily pre-market prep, and a community of traders who actually share what works."
-[Visual: Price card: $49/mo — no long-term contracts.]
-Narrator: "All for $49 a month. No lock-in. Cancel any time."
+[Visual: An active {company} member community feed.]
+Narrator (Voiceover): "Thousands of members have switched to a guided, community-powered approach."
+[Visual: The {company} app on screen.]
+Narrator: "{company} gives you a plan built around you, ongoing support, and a community that shares what actually works."
+[Visual: Price card: one simple monthly price, cancel anytime.]
+Narrator: "No lock-in. Cancel any time."
 [Visual: CTA button reads 'Join the Community Now'.]
 
 ---
 **Compliance note:** This script contains no named customer testimonials or specific performance claims.
-Before production, insert verified member quotes sourced from real, consented CWT members.
-Trading contains substantial risk. Past performance is not indicative of future results.
+Before production, insert verified member quotes sourced from real, consented {company} members.
 """
 
     # --- 10. Content repurposing ---
     elif "extract the 3-5 most quotable" in combined:
-        return """1. The video discusses the importance of risk management.
-2. The video argues that position sizing is critical for funded accounts."""
-        
+        return """1. The video stresses that consistency matters more than intensity.
+2. The video argues that a simple, repeatable routine beats a complicated one."""
+
     elif "three platform-native assets" in combined:
-        return """## X Thread
-1/ Most retail day traders fail because they don't have a plan. Here's a simple 3-step checklist to save your account...
+        return f"""## X Thread
+1/ Most people quit because they don't have a simple plan. Here's a 3-step checklist to stay on track with {company}...
 
 ## LinkedIn Post
-Trading is a business, not a gamble. Proper risk management means never risking more than 1% per trade...
+Progress is a system, not a burst of motivation. Small, consistent steps compound over time...
 
 ## Short-Form Video Script
-[Visual: Text reads 'Rule #1 of Day Trading']
-Speaker: "Never risk more than 1%. If you do, you're gambling..."
+[Visual: Text reads 'Rule #1 to actually stick with it']
+Speaker: "Start small and stay consistent. That's how real progress happens."
 """
 
     elif "1-week posting calendar" in combined:
@@ -311,37 +309,24 @@ Speaker: "Never risk more than 1%. If you do, you're gambling..."
 | Friday | TikTok | Short-Form Video Script | 12:00 PM |
 """
 
-    # --- 11. Competitor names (broadest — checked LAST) ---
-    elif "warrior trading" in combined:
-        return """### Warrior Trading
-- **Overview:** Warrior Trading is a massive trading-education platform led by Ross Cameron. It focuses heavily on momentum day trading, small cap stocks, and high-frequency execution.
-- **Pricing Model:** High pricing tier. Mentoring & simulator bundles cost $997 to $4,297 per year depending on the tier.
-- **Pros:** Extremely detailed technical courses, live trading room, robust proprietary simulator.
-- **Cons:** Very expensive, high-pressure marketing, strategy requires high risk tolerance and rapid execution."""
-    elif "bullish bears" in combined:
-        return """### Bullish Bears
-- **Overview:** Bullish Bears offers low-cost trading courses, trade rooms, and Discord chat alerts for retail traders.
-- **Pricing Model:** Low pricing tier. Subscription is $47/mo or $397/yr.
-- **Pros:** Very affordable, supportive community environment, covers many trading styles (options, swings, day).
-- **Cons:** Less advanced proprietary tools, strategies are broad and less specialized."""
-    elif "the trading channel" in combined:
-        return """### The Trading Channel
-- **Overview:** Run by Steven Hart, focusing on retail forex and swing trading education.
-- **Pricing Model:** Medium pricing tier, courses start at $297.
-- **Pros:** High-quality free content on YouTube, solid foundation in technical analysis.
-- **Cons:** Upsells to expensive course materials, focus is primarily on indicators."""
-    elif "investors underground" in combined:
-        return """### Investors Underground
-- **Overview:** One of the oldest chatrooms, focusing on day trading momentum and swings.
-- **Pricing Model:** High monthly cost ($297/mo or $1,897/yr).
-- **Pros:** High-quality webinar archives, seasoned moderators, focus on trading fundamentals.
-- **Cons:** Chat can be overwhelming for beginners, high price barrier."""
-    elif "fundednext" in combined:
-        return """### FundedNext
-- **Overview:** A leading prop firm that offers evaluation accounts for traders seeking funded capital.
-- **Pricing Model:** Medium pricing tier, evaluation fees starting around $99 for $6k accounts up to $1k+ for larger accounts.
-- **Pros:** Profit share during assessment, realistic drawdown rules, 24/7 support.
-- **Cons:** Strict drawdown rules can be hard to pass, profit targets require high performance."""
+    # --- 11. Competitor research (niche-agnostic) ---
+    # competitor_research.py sends "Competitor: <name>" in the user prompt. Parse the
+    # name and return a generic, niche-neutral brief so demo mode works for any niche.
+    elif "competitor:" in combined or ("marketing analyst" in combined and "pricing" in combined):
+        import re as _re
+        m = _re.search(r"competitor:\s*(.+)", prompt, _re.IGNORECASE)
+        name = m.group(1).splitlines()[0].strip() if m else "This competitor"
+        return f"""## Positioning
+{name} is an established player in the niche with broad brand recognition.
+
+## Target Audience
+Mainstream customers looking for a trusted, well-known option.
+
+## Pricing Model
+Pricing is not consistently disclosed publicly; checked the homepage, plans page, and review directories. Positioned in the mid-to-premium range.
+
+## Dominant Content Format / Channel
+Primarily social media and video content, supported by paid campaigns."""
 
     # --- 12. Default ---
     else:
@@ -351,7 +336,9 @@ Speaker: "Never risk more than 1%. If you do, you're gambling..."
 def chat(messages: list[dict], temperature: float = 0.7, max_tokens: int = 1200) -> str:
     global _rotation_idx
     if os.getenv("DEMO_MODE") == "true":
-        return get_demo_response(messages)
+        system = next((m["content"] for m in messages if m["role"] == "system"), "")
+        prompt = next((m["content"] for m in messages if m["role"] == "user"), "")
+        return _get_demo_response(system, prompt)
 
     provider = os.getenv("LLM_PROVIDER", "openrouter")
     cfg = _PROVIDERS[provider]
