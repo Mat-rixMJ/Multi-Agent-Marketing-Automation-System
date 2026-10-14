@@ -1,3 +1,5 @@
 pytest>=8.0.0
 streamlit>=1.30.0
-ruff>=0.2.0
+# Pinned so local and CI lint identically; unpinned ruff drifts its default
+# rule set between releases and silently breaks the CI gate.
+ruff==0.15.21

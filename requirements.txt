@@ -5,4 +5,8 @@ python-telegram-bot>=21.0
 pydantic>=2.7.0
 tenacity>=8.2.3
 fpdf2>=2.8.0
-hermes-agent @ git+https://github.com/NousResearch/hermes-agent.git
+
+# NOTE: hermes-agent (needed only for hermes_runner.py) is NOT pip-installable —
+# it must be installed via its own shell installer / Docker / Nix. The core
+# pipeline (main.py, demo mode, all four agents, tests) does not require it.
+# See: https://hermes-agent.nousresearch.com/docs/getting-started/installation
