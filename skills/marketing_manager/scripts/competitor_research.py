@@ -3,9 +3,7 @@ summarizes positioning/pricing/content strategy via LLM, writes Obsidian notes.
 
 Usage: python -m skills.marketing_manager.scripts.competitor_research
 """
-import json
 import os
-from datetime import datetime, timezone
 from pathlib import Path
 
 from tools.apify_client import rag_web_search

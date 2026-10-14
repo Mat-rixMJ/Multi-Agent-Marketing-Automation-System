@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import patch
 
 # Mock LLM for script scoring tests

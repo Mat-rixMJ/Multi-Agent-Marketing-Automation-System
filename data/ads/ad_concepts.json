@@ -1,26 +1,162 @@
 [
   {
-    "pain_point": "Difficulty in finding a comprehensive and accessible fitness solution.",
-    "hook": "India\u2019s largest app-based platform offering a complete fitness experience.",
-    "offer_mechanism": "Access to over 12,000 gyms and fitness centers, personalized diet plans, and AI fitness coaching.",
-    "cta": "Discover your perfect fitness journey with FITPASS today!",
-    "notes": "Highlights the breadth of services and technology-driven approach.",
-    "advertiser": "FITPASS"
+    "pain_point": "Customers of Diets Koot India: People overpay for generic programs that are not built around their own goals.",
+    "hook": "Stop paying for one-size-fits-all plans that ignore how you actually live.",
+    "offer_mechanism": "A personalized plan and real coaching from Cult.fit for one simple monthly price.",
+    "cta": "Start your Cult.fit plan today",
+    "notes": "Value/personalization angle.",
+    "advertiser": "Diets Koot India"
   },
   {
-    "pain_point": "Finding a convenient and comprehensive fitness solution in India.",
-    "hook": "Experience the full range of fitness services with FITPASS's unique app-based platform.",
-    "offer_mechanism": "Gain access to over 12,000 gyms, get personalized diet plans, and enjoy AI-driven coaching.",
-    "cta": "Join today and transform your fitness journey with FITPASS!",
-    "notes": "Highlights the extensive network of gyms and advanced features like custom diet plans.",
-    "advertiser": "FITPASS"
+    "pain_point": "Customers of Workout With Nyela: Beginners feel overwhelmed and quit before they ever see results.",
+    "hook": "Tired of starting over every few weeks?",
+    "offer_mechanism": "Cult.fit gives you a guided, step-by-step path with support that keeps you going.",
+    "cta": "Join Cult.fit today",
+    "notes": "Beginner-friendly onboarding angle.",
+    "advertiser": "Workout With Nyela"
   },
   {
-    "pain_point": "Finding a comprehensive and accessible fitness solution in India.",
-    "hook": "India's largest app-based fitness platform offers a wide range of features to meet all your fitness needs.",
-    "offer_mechanism": "Access to over 12,000 gyms and fitness centers, personalized diet plans, and AI-driven fitness coaching.",
-    "cta": "Transform your fitness journey with FITPASS today!",
-    "notes": "Emphasizes the extensive network of gyms and innovative features.",
-    "advertiser": "FITPASS"
+    "pain_point": "Customers of CoeActive Fitness: Busy people cannot stick to a routine that demands hours they do not have.",
+    "hook": "No time? That is exactly who this is built for.",
+    "offer_mechanism": "Short, flexible sessions and reminders from Cult.fit that fit a packed schedule.",
+    "cta": "See how Cult.fit fits your week",
+    "notes": "Convenience angle for busy audience.",
+    "advertiser": "CoeActive Fitness"
+  },
+  {
+    "pain_point": "Customers of prof.fernandao_personal: Most options promise results but offer no community or accountability.",
+    "hook": "Going it alone is why most people give up.",
+    "offer_mechanism": "An active Cult.fit community plus progress tracking that keeps you accountable.",
+    "cta": "Switch to Cult.fit",
+    "notes": "Community and accountability angle.",
+    "advertiser": "prof.fernandao_personal"
+  },
+  {
+    "pain_point": "Customers of prof.fernandao_personal: Customers cannot tell whether a program's claims are real or marketing.",
+    "hook": "Real results, shown honestly. No inflated promises.",
+    "offer_mechanism": "Cult.fit shares transparent, member-sourced outcomes instead of hype.",
+    "cta": "See real Cult.fit results",
+    "notes": "Transparency and social-proof angle.",
+    "advertiser": "prof.fernandao_personal"
+  },
+  {
+    "advertiser": "The Health Connect Kerala",
+    "pain_point": "Customers of The Health Connect Kerala: People lose motivation when they cannot see their own progress.",
+    "hook": "What if every week showed you proof you were improving?",
+    "offer_mechanism": "Cult.fit tracks your progress and celebrates every milestone with you.",
+    "cta": "Track your progress with Cult.fit",
+    "notes": "Motivation and progress-tracking angle."
+  },
+  {
+    "pain_point": "Customers of Speediance Europe: People overpay for generic programs that are not built around their own goals.",
+    "hook": "Stop paying for one-size-fits-all plans that ignore how you actually live.",
+    "offer_mechanism": "A personalized plan and real coaching from Cult.fit for one simple monthly price.",
+    "cta": "Start your Cult.fit plan today",
+    "notes": "Value/personalization angle.",
+    "advertiser": "Speediance Europe"
+  },
+  {
+    "pain_point": "Customers of Speediance Europe: Beginners feel overwhelmed and quit before they ever see results.",
+    "hook": "Tired of starting over every few weeks?",
+    "offer_mechanism": "Cult.fit gives you a guided, step-by-step path with support that keeps you going.",
+    "cta": "Join Cult.fit today",
+    "notes": "Beginner-friendly onboarding angle.",
+    "advertiser": "Speediance Europe"
+  },
+  {
+    "pain_point": "Customers of Fast&Up India: Busy people cannot stick to a routine that demands hours they do not have.",
+    "hook": "No time? That is exactly who this is built for.",
+    "offer_mechanism": "Short, flexible sessions and reminders from Cult.fit that fit a packed schedule.",
+    "cta": "See how Cult.fit fits your week",
+    "notes": "Convenience angle for busy audience.",
+    "advertiser": "Fast&Up India"
+  },
+  {
+    "pain_point": "Customers of Fitelo: Most options promise results but offer no community or accountability.",
+    "hook": "Going it alone is why most people give up.",
+    "offer_mechanism": "An active Cult.fit community plus progress tracking that keeps you accountable.",
+    "cta": "Switch to Cult.fit",
+    "notes": "Community and accountability angle.",
+    "advertiser": "Fitelo"
+  },
+  {
+    "pain_point": "Customers of Fitelo: Customers cannot tell whether a program's claims are real or marketing.",
+    "hook": "Real results, shown honestly. No inflated promises.",
+    "offer_mechanism": "Cult.fit shares transparent, member-sourced outcomes instead of hype.",
+    "cta": "See real Cult.fit results",
+    "notes": "Transparency and social-proof angle.",
+    "advertiser": "Fitelo"
+  },
+  {
+    "advertiser": "Studio Fondue ",
+    "pain_point": "Customers of Studio Fondue: People lose motivation when they cannot see their own progress.",
+    "hook": "What if every week showed you proof you were improving?",
+    "offer_mechanism": "Cult.fit tracks your progress and celebrates every milestone with you.",
+    "cta": "Track your progress with Cult.fit",
+    "notes": "Motivation and progress-tracking angle."
+  },
+  {
+    "pain_point": "Customers of Fitness Toolkit: People overpay for generic programs that are not built around their own goals.",
+    "hook": "Stop paying for one-size-fits-all plans that ignore how you actually live.",
+    "offer_mechanism": "A personalized plan and real coaching from Cult.fit for one simple monthly price.",
+    "cta": "Start your Cult.fit plan today",
+    "notes": "Value/personalization angle.",
+    "advertiser": "Fitness Toolkit"
+  },
+  {
+    "pain_point": "Customers of Yograja: Beginners feel overwhelmed and quit before they ever see results.",
+    "hook": "Tired of starting over every few weeks?",
+    "offer_mechanism": "Cult.fit gives you a guided, step-by-step path with support that keeps you going.",
+    "cta": "Join Cult.fit today",
+    "notes": "Beginner-friendly onboarding angle.",
+    "advertiser": "Yograja"
+  },
+  {
+    "pain_point": "Customers of Yograja: Busy people cannot stick to a routine that demands hours they do not have.",
+    "hook": "No time? That is exactly who this is built for.",
+    "offer_mechanism": "Short, flexible sessions and reminders from Cult.fit that fit a packed schedule.",
+    "cta": "See how Cult.fit fits your week",
+    "notes": "Convenience angle for busy audience.",
+    "advertiser": "Yograja"
+  },
+  {
+    "pain_point": "Customers of Greens Fitness Academy: Most options promise results but offer no community or accountability.",
+    "hook": "Going it alone is why most people give up.",
+    "offer_mechanism": "An active Cult.fit community plus progress tracking that keeps you accountable.",
+    "cta": "Switch to Cult.fit",
+    "notes": "Community and accountability angle.",
+    "advertiser": "Greens Fitness Academy"
+  },
+  {
+    "pain_point": "Customers of Diabexy: Customers cannot tell whether a program's claims are real or marketing.",
+    "hook": "Real results, shown honestly. No inflated promises.",
+    "offer_mechanism": "Cult.fit shares transparent, member-sourced outcomes instead of hype.",
+    "cta": "See real Cult.fit results",
+    "notes": "Transparency and social-proof angle.",
+    "advertiser": "Diabexy"
+  },
+  {
+    "advertiser": "Diabexy",
+    "pain_point": "Customers of Diabexy: People lose motivation when they cannot see their own progress.",
+    "hook": "What if every week showed you proof you were improving?",
+    "offer_mechanism": "Cult.fit tracks your progress and celebrates every milestone with you.",
+    "cta": "Track your progress with Cult.fit",
+    "notes": "Motivation and progress-tracking angle."
+  },
+  {
+    "pain_point": "Customers of prof.fernandao_personal: People overpay for generic programs that are not built around their own goals.",
+    "hook": "Stop paying for one-size-fits-all plans that ignore how you actually live.",
+    "offer_mechanism": "A personalized plan and real coaching from Cult.fit for one simple monthly price.",
+    "cta": "Start your Cult.fit plan today",
+    "notes": "Value/personalization angle.",
+    "advertiser": "prof.fernandao_personal"
+  },
+  {
+    "pain_point": "Customers of prof.fernandao_personal: Beginners feel overwhelmed and quit before they ever see results.",
+    "hook": "Tired of starting over every few weeks?",
+    "offer_mechanism": "Cult.fit gives you a guided, step-by-step path with support that keeps you going.",
+    "cta": "Join Cult.fit today",
+    "notes": "Beginner-friendly onboarding angle.",
+    "advertiser": "prof.fernandao_personal"
   }
 ]

@@ -87,7 +87,12 @@ def main() -> None:
 
         (OUT_DIR / "meta_ads_raw.json").write_text(json.dumps(all_ads, indent=2, default=str), encoding="utf-8")
 
-    recent = [a for a in all_ads if within_last_30_days(a)]
+    # ponytail: demo fixtures have fixed capture dates that age out of the live
+    # 30-day window, so skip the recency filter in demo mode. Live runs still filter.
+    if os.getenv("DEMO_MODE") == "true":
+        recent = all_ads
+    else:
+        recent = [a for a in all_ads if within_last_30_days(a)]
     
     # Filter for relevance and text presence
     relevant = []

@@ -84,7 +84,7 @@ def check_brand_bleed(content: str, company: str) -> bool:
     try:
         res = ask(prompt, "").strip().upper()
         return "FAIL" not in res
-    except:
+    except Exception:
         return True
 
 

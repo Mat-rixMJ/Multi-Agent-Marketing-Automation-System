@@ -24,7 +24,7 @@ if site_packages:
     sys.path.insert(0, site_packages)
 
 # Bypass Hermes context window check for free models
-import agent.agent_init as _ai
+import agent.agent_init as _ai  # noqa: E402
 _ai.MINIMUM_CONTEXT_LENGTH = 0
 
 from run_agent import AIAgent  # noqa: E402
@@ -41,7 +41,7 @@ if _project_root not in sys.path:
     sys.path.insert(1, _project_root)
 
 # Force import from our project's tools/ not Hermes's tools/
-import importlib.util
+import importlib.util  # noqa: E402
 def _import_local(module_name, file_path):
     spec = importlib.util.spec_from_file_location(module_name, file_path)
     mod = importlib.util.module_from_spec(spec)
@@ -112,7 +112,7 @@ def gather_context(completed_skills: dict[str, str]) -> str:
 
 def build_task_for_skill(skill_name: str, kanban_card: dict | None, context: str) -> str:
     """Build the task message — simple instruction to execute the skill procedure."""
-    task = f"Execute the full procedure described in your skill instructions. Run each step in order using the terminal."
+    task = "Execute the full procedure described in your skill instructions. Run each step in order using the terminal."
 
     if kanban_card:
         task += f"\n\nKanban card: {kanban_card.get('title', '')}"
